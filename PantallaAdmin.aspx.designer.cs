@@ -24,6 +24,15 @@ namespace PropuestaResto
         protected global::System.Web.UI.WebControls.Button btnAgregarInsumo;
 
         /// <summary>
+        /// Control divAltaInsumo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divAltaInsumo;
+
+        /// <summary>
         /// Control dgvInsumos.
         /// </summary>
         /// <remarks>
@@ -31,5 +40,14 @@ namespace PropuestaResto
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView dgvInsumos;
+
+        /// <summary>
+        /// Control txt.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt;
     }
 }

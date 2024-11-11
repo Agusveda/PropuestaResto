@@ -13,7 +13,7 @@
         </div>
 
         <div class="col">
-            <asp:Button Text="Agregar nuevo insumo" class="btn btn-outline-success" runat="server" id="btnAgregarInsumo" OnClick="btnAgregarInsumo_Click" />
+            <asp:Button Text="Agregar nuevo insumo" class="btn btn-outline-success" runat="server" ID="btnAgregarInsumo" OnClick="btnAgregarInsumo_Click" />
         </div>
 
         <div class="col">
@@ -26,22 +26,32 @@
 
     </div>
 
+    <div id="divAltaInsumo" runat="server">
+    <label class="container container text-center">REGISTROS ACTUALES EN LA CARTA </label>
+    <asp:GridView ID="dgvInsumos" class="table" runat="server" AutoGenerateColumns="false">
+        <Columns>
+            <asp:BoundField HeaderText="Idinsumo" DataField="IdInsumo" />
+            <asp:BoundField HeaderText="Descripcion" DataField="Descripcion" />
+            <asp:BoundField HeaderText="Cantidad" DataField="Cantidad" />
+            <asp:BoundField HeaderText="Tipo Insumo" DataField="IdTipoInsumo.Descripciontipo" />
+            <asp:BoundField HeaderText="Precio" DataField="Precio" />
+        </Columns>
+    </asp:GridView>
 
-        <asp:GridView id="dgvInsumos"  runat="server" AutoGenerateColumns="false" >
+        <div class="row">
+            <div class="col-6">
+                <label ></label>
+                <asp:TextBox runat="server" ID="txt" ></asp:TextBox>
 
-            <Columns>
-                <asp:BoundField HeaderText="Idinsumo" DataField="IdInsumo" />
-                <asp:BoundField HeaderText="Descripcion" DataField="Descripcion" />
-                <asp:BoundField HeaderText="Cantidad" DataField="Cantidad" />
-                <asp:BoundField HeaderText="Tipo Insumo" DataField="IdTipoInsumo.Descripciontipo" />
-                <asp:BoundField HeaderText="Precio" DataField="Precio" />
-
-            </Columns>
+            </div>
 
 
 
-        </asp:GridView>
-    <div id="divAltaInsumo"> 
+        </div>
+
+        
+
+            
 
 
 
