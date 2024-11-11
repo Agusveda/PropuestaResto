@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.Linq;
 using System.Net.Http;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using Dominio;
@@ -14,93 +15,46 @@ namespace Negocio
 {
     public class InsumoNegocio
     {
-        //public List<Articulo> Listar()
-        //{
-        //    List<Articulo> listaArticulo = new List<Articulo>();
-        //    Conexion_Comandos AccesoDatos = new Conexion_Comandos();
-        //    try {
-        //    AccesoDatos.setearConsulta("select  a.Id, A.Codigo, A.Nombre,A.Descripcion,A.Precio,m.Id as IdMarca ,M.Descripcion AS DescripcionMarca, c.Id as Idcategoria,C.Descripcion AS DescripcionCate,i.Id as idimg,I.ImagenUrl from ARTICULOS A INNER join MARCAS M on M.Id = A.IdMarca INNER join CATEGORIAS C on C.Id = A.IdCategoria INNER join IMAGENES I on I.IdArticulo = A.Id");
-        //    AccesoDatos.ejecutarLectura();
+        public List<TipoInsumo> ListarTipoInsumo()
+        {
+            List<TipoInsumo> lista = new List<TipoInsumo>();
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearProcedimiento("ListarTipoInsumos");
+                datos.ejecutarLectura();
 
-        //    while(AccesoDatos.Lector.Read())
-        //        {
-        //                Articulo aux = new Articulo();
+                while (datos.Lector.Read())
+                {
+                    TipoInsumo aux = new TipoInsumo();
 
-
-
-        //            aux.id = (int)AccesoDatos.Lector["Id"];
-        //            aux.Codigo = (string)AccesoDatos.Lector["Codigo"];
-        //            aux.Nombre = (string)AccesoDatos.Lector["Nombre"];
-        //            aux.descripcion= (string)AccesoDatos.Lector["Descripcion"];
-        //            aux.Precio = (decimal)AccesoDatos.Lector["Precio"];
+                    aux.IdtipoInsumo = (int)datos.Lector["idTipoInsumo"];
+                    aux.Descripciontipo = (string)datos.Lector["Descripciontipo"];
 
 
-        //            //Creamos un aux marca para poder cargar las columnas
-                    
-        //            aux.idMarca = new Marca();
-        //            aux.idMarca.Id = (int)AccesoDatos.Lector["IdMarca"];
-        //            aux.idMarca.Descripcion = (string)AccesoDatos.Lector["DescripcionMarca"];
-
-        //            //Creamos un aux categoria para poder cargar las columnas
-
-        //            aux.idCategoria = new Categoria();
-        //            if (AccesoDatos.Lector["DescripcionCate"] is DBNull && AccesoDatos.Lector["Idcategoria"] is DBNull)
-        //            {
-        //                aux.idCategoria.Descripcion = "Sin descripcion";
-        //                aux.idCategoria.Id = 0;
-        //            }
-        //            else
-        //            {
-
-        //            aux.idCategoria.Id = (int)AccesoDatos.Lector["Idcategoria"];
-        //            aux.idCategoria.Descripcion = (string)AccesoDatos.Lector["DescripcionCate"];
-        //            }
+                    lista.Add(aux);
 
 
-        //            aux.IdImagenUrl = new Imagenes();
-        //            if (AccesoDatos.Lector["ImagenURL"] is DBNull && AccesoDatos.Lector["IdImg"] is DBNull)
-        //            {
-        //                aux.IdImagenUrl.id = 0;
-        //                aux.IdImagenUrl.ImagenURL = "";
-        //            }
-        //            else
-        //            {
-
-        //                aux.IdImagenUrl.id = (int)AccesoDatos.Lector["IdImg"];
-        //                aux.IdImagenUrl.ImagenURL = (string)AccesoDatos.Lector["ImagenUrl"];
-        //            }
+                }
+                return lista;
 
 
-        //                listaArticulo.Add(aux);
+            }
+            catch (Exception ex)
+            {
 
-        //        }
+                throw ex;
+            }
 
-
-        //        AccesoDatos.cerrarConexion();
-        //        return listaArticulo;
-
-
-        //    } 
-            
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-
-        //    }
-          
-
-
-
-        //}
-
-        public List<Insumo> ListarConSp ()
+        }
+        public List<Insumo> ListarConSp()
         {
             List<Insumo> lista = new List<Insumo>();
             AccesoDatos datos = new AccesoDatos();
 
             try
             {
-               
+
 
                 datos.setearProcedimiento("ListarInsumos");
                 datos.ejecutarLectura();
@@ -109,17 +63,17 @@ namespace Negocio
                     Insumo aux = new Insumo();
 
                     aux.IdInsumo = (int)datos.Lector["IdInsumo"];
-                    aux.Descripcion= (string)datos.Lector["Descripcion"];
+                    aux.Descripcion = (string)datos.Lector["Descripcion"];
 
                     // para poder cargar el tipo de insumo que es
                     aux.Cantidad = (int)datos.Lector["Cantidad"];
                     aux.Precio = (decimal)datos.Lector["Precio"];
 
                     aux.IdTipoInsumo = new TipoInsumo();
-                    aux.IdTipoInsumo.Descripciontipo= (string)datos.Lector["TipoInsumo"];
+                    aux.IdTipoInsumo.Descripciontipo = (string)datos.Lector["TipoInsumo"];
 
 
-                   
+
 
                     lista.Add(aux);
                 }
@@ -130,39 +84,32 @@ namespace Negocio
                 throw ex;
             }
         }
+        public void AgregarInsumo(Insumo nuevoInsumo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearProcedimiento("insInsumo");
+                datos.setearParametros("@Descripcion", nuevoInsumo.Descripcion);
+                datos.setearParametros("@IdTipoInsumo", nuevoInsumo.IdTipoInsumo.IdtipoInsumo);
+                datos.setearParametros("@Cantidad", nuevoInsumo.Cantidad);
+                datos.setearParametros("@Precio", nuevoInsumo.Precio);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
 
-       
-
-        //public void Agregar(Articulo nuevoarticulo)
-        //{
-        //    Conexion_Comandos Accesodatos = new Conexion_Comandos();
-        //    try
-        //    {
-
-        //        Accesodatos.setearConsulta("Insert into ARTICULOS(Codigo,Nombre,Descripcion,IdMarca,IdCategoria,Precio) values (@Codigo,@Nombre,@Descripcion,@IdMarca,@IdCategoria,@Precio)");
-        //        Accesodatos.setearParametros("@Codigo", nuevoarticulo.Codigo);
-        //        Accesodatos.setearParametros("@Nombre", nuevoarticulo.Nombre);
-        //        Accesodatos.setearParametros("@Descripcion", nuevoarticulo.descripcion);
-        //        Accesodatos.setearParametros("@IdMarca", nuevoarticulo.idMarca.Id);
-        //        Accesodatos.setearParametros("@IdCategoria", nuevoarticulo.idCategoria.Id);
-        //        Accesodatos.setearParametros("@Precio", nuevoarticulo.Precio);
-        //        Accesodatos.ejecutarAccion();
-              
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //        throw ex;
-        //    }
-        //    finally
-        //    {
-        //        Accesodatos.cerrarConexion();
-
-                
-        //    }
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
 
 
-            
+            }
+        }
+
+
 
 
         //}
@@ -310,7 +257,7 @@ namespace Negocio
         //                aux.IdImagenUrl.ImagenURL = (string)datos.Lector["ImagenUrl"];
         //            }
 
-                    
+
 
         //            aux.Precio = (decimal)datos.Lector["Precio"];
         //            lista.Add(aux);
@@ -343,6 +290,7 @@ namespace Negocio
 
 
     }
-
-
 }
+
+
+    
