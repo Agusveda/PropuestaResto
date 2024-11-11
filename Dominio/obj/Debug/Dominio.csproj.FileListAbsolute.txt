@@ -1,0 +1,6 @@
+C:\Users\Usuario\Documents\GitHub\PropuestaResto\PropuestaResto\Dominio\bin\Debug\Dominio.dll
+C:\Users\Usuario\Documents\GitHub\PropuestaResto\PropuestaResto\Dominio\bin\Debug\Dominio.pdb
+C:\Users\Usuario\Documents\GitHub\PropuestaResto\PropuestaResto\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+C:\Users\Usuario\Documents\GitHub\PropuestaResto\PropuestaResto\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Documents\GitHub\PropuestaResto\PropuestaResto\Dominio\obj\Debug\Dominio.dll
+C:\Users\Usuario\Documents\GitHub\PropuestaResto\PropuestaResto\Dominio\obj\Debug\Dominio.pdb

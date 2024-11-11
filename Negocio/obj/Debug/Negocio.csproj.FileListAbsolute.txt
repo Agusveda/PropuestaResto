@@ -1,0 +1,9 @@
+C:\Users\Usuario\Documents\GitHub\PropuestaResto\PropuestaResto\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+C:\Users\Usuario\Documents\GitHub\PropuestaResto\PropuestaResto\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Documents\GitHub\PropuestaResto\PropuestaResto\Negocio\bin\Debug\Negocio.dll
+C:\Users\Usuario\Documents\GitHub\PropuestaResto\PropuestaResto\Negocio\bin\Debug\Negocio.pdb
+C:\Users\Usuario\Documents\GitHub\PropuestaResto\PropuestaResto\Negocio\bin\Debug\Dominio.dll
+C:\Users\Usuario\Documents\GitHub\PropuestaResto\PropuestaResto\Negocio\bin\Debug\Dominio.pdb
+C:\Users\Usuario\Documents\GitHub\PropuestaResto\PropuestaResto\Negocio\obj\Debug\Negocio.csproj.Up2Date
+C:\Users\Usuario\Documents\GitHub\PropuestaResto\PropuestaResto\Negocio\obj\Debug\Negocio.dll
+C:\Users\Usuario\Documents\GitHub\PropuestaResto\PropuestaResto\Negocio\obj\Debug\Negocio.pdb

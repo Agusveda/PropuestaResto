@@ -3,7 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\Documents\\GitHub\\PropuestaResto\\PropuestaResto\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{20F24E92-3A41-4926-9543-C79219390B47}|..\\Dominio\\Dominio.csproj|c:\\users\\usuario\\documents\\github\\propuestaresto\\dominio\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|c:\\users\\usuario\\documents\\github\\propuestaresto\\propuestaresto\\pantallaadmin.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|solutionrelative:pantallaadmin.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|c:\\users\\usuario\\documents\\github\\propuestaresto\\propuestaresto\\pantallaadmin.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|solutionrelative:pantallaadmin.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20F24E92-3A41-4926-9543-C79219390B47}|Dominio\\Dominio.csproj|c:\\users\\usuario\\documents\\github\\propuestaresto\\propuestaresto\\dominio\\tipoinsumo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20F24E92-3A41-4926-9543-C79219390B47}|Dominio\\Dominio.csproj|solutionrelative:dominio\\tipoinsumo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20F24E92-3A41-4926-9543-C79219390B47}|Dominio\\Dominio.csproj|c:\\users\\usuario\\documents\\github\\propuestaresto\\propuestaresto\\dominio\\insumo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20F24E92-3A41-4926-9543-C79219390B47}|Dominio\\Dominio.csproj|solutionrelative:dominio\\insumo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,14 +31,54 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\PropuestaResto\\Dominio\\Usuario.cs",
-              "RelativeDocumentMoniker": "..\\Dominio\\Usuario.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\PropuestaResto\\Dominio\\Usuario.cs",
-              "RelativeToolTip": "..\\Dominio\\Usuario.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAsAAAA",
+              "Title": "PantallaAdmin.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\PropuestaResto\\PropuestaResto\\PantallaAdmin.aspx.cs",
+              "RelativeDocumentMoniker": "PantallaAdmin.aspx.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\PropuestaResto\\PropuestaResto\\PantallaAdmin.aspx.cs",
+              "RelativeToolTip": "PantallaAdmin.aspx.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-09T23:37:24.048Z",
+              "WhenOpened": "2024-11-10T23:55:10.691Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TipoInsumo.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\PropuestaResto\\PropuestaResto\\Dominio\\TipoInsumo.cs",
+              "RelativeDocumentMoniker": "Dominio\\TipoInsumo.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\PropuestaResto\\PropuestaResto\\Dominio\\TipoInsumo.cs",
+              "RelativeToolTip": "Dominio\\TipoInsumo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T23:56:36.063Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Insumo.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\PropuestaResto\\PropuestaResto\\Dominio\\Insumo.cs",
+              "RelativeDocumentMoniker": "Dominio\\Insumo.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\PropuestaResto\\PropuestaResto\\Dominio\\Insumo.cs",
+              "RelativeToolTip": "Dominio\\Insumo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T23:56:31.439Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PantallaAdmin.aspx",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\PropuestaResto\\PropuestaResto\\PantallaAdmin.aspx",
+              "RelativeDocumentMoniker": "PantallaAdmin.aspx",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\PropuestaResto\\PropuestaResto\\PantallaAdmin.aspx",
+              "RelativeToolTip": "PantallaAdmin.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-11-10T23:51:16.528Z",
               "EditorCaption": ""
             }
           ]

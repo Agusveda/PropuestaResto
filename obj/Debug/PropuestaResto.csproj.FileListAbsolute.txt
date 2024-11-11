@@ -57,3 +57,7 @@ C:\Users\Usuario\Documents\GitHub\PropuestaResto\PropuestaResto\obj\Debug\Propue
 C:\Users\Usuario\Documents\GitHub\PropuestaResto\PropuestaResto\obj\Debug\Propuest.3BC97FCA.Up2Date
 C:\Users\Usuario\Documents\GitHub\PropuestaResto\PropuestaResto\obj\Debug\PropuestaResto.dll
 C:\Users\Usuario\Documents\GitHub\PropuestaResto\PropuestaResto\obj\Debug\PropuestaResto.pdb
+C:\Users\Usuario\Documents\GitHub\PropuestaResto\PropuestaResto\bin\Dominio.dll
+C:\Users\Usuario\Documents\GitHub\PropuestaResto\PropuestaResto\bin\Negocio.dll
+C:\Users\Usuario\Documents\GitHub\PropuestaResto\PropuestaResto\bin\Dominio.pdb
+C:\Users\Usuario\Documents\GitHub\PropuestaResto\PropuestaResto\bin\Negocio.pdb

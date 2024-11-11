@@ -13,5 +13,19 @@ namespace PropuestaResto
         {
 
         }
+
+      
+        protected void btnMesas_Click(object sender, EventArgs e)
+        {
+
+            Response.Redirect("PantallaMesas.aspx", false);
+
+        }
+
+        protected void btnAdmin_Click(object sender, EventArgs e)
+        {
+
+            Response.Redirect("PantallaAdmin.aspx", false);
+        }
     }
 }

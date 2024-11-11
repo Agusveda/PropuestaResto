@@ -11,25 +11,25 @@ namespace PropuestaResto
 {
 
 
-    public partial class Default
+    public partial class PantallaAdmin
     {
 
         /// <summary>
-        /// Control btnMesas.
+        /// Control btnAgregarInsumo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnMesas;
+        protected global::System.Web.UI.WebControls.Button btnAgregarInsumo;
 
         /// <summary>
-        /// Control btnAdmin.
+        /// Control dgvInsumos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdmin;
+        protected global::System.Web.UI.WebControls.GridView dgvInsumos;
     }
 }
