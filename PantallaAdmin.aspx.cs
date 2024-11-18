@@ -23,8 +23,8 @@ namespace PropuestaResto
             // lista actuales
 
             InsumoNegocio negocio = new InsumoNegocio();
-            dgvInsumos.DataSource = negocio.ListarConSp();
-            dgvInsumos.DataBind();
+            repInsumos.DataSource = negocio.ListarConSp();
+            repInsumos.DataBind();
 
             //desplegable de los tipos de insumo
             ddlTipoInsumos.DataSource = negocio.ListarTipoInsumo();
@@ -65,6 +65,16 @@ namespace PropuestaResto
             }
 
 
+
+        }
+
+        protected void btnModificar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnElimianr_Click(object sender, EventArgs e)
+        {
 
         }
     }
