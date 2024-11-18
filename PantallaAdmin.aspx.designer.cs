@@ -15,13 +15,31 @@ namespace PropuestaResto
     {
 
         /// <summary>
-        /// Control btnAgregarInsumo.
+        /// Control btnAbmInsumos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAgregarInsumo;
+        protected global::System.Web.UI.WebControls.Button btnAbmInsumos;
+
+        /// <summary>
+        /// Control ABMINSUMOS.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ABMINSUMOS;
+
+        /// <summary>
+        /// Control btnAltaInsumo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAltaInsumo;
 
         /// <summary>
         /// Control divAltaInsumo.
@@ -78,6 +96,15 @@ namespace PropuestaResto
         protected global::System.Web.UI.WebControls.Button btnAceptarAgregarInsumo;
 
         /// <summary>
+        /// Control btnAceptarModificarInsumo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAceptarModificarInsumo;
+
+        /// <summary>
         /// Control repInsumos.
         /// </summary>
         /// <remarks>
@@ -85,5 +112,14 @@ namespace PropuestaResto
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater repInsumos;
+
+        /// <summary>
+        /// Control txtIdInsumo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtIdInsumo;
     }
 }

@@ -14,14 +14,14 @@ namespace PropuestaResto
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            divAltaInsumo.Visible = false;
+            ABMINSUMOS.Visible = false;
         }
 
-       
-        protected void btnAgregarInsumo_Click(object sender, EventArgs e)
+        //                                      ABM DE INSUMOSSSSS 
+        protected void btnAbmInsumos_Click(object sender, EventArgs e)
         {
             // lista actuales
-
+            /// configuracion si estamos agregando 
             InsumoNegocio negocio = new InsumoNegocio();
             repInsumos.DataSource = negocio.ListarConSp();
             repInsumos.DataBind();
@@ -34,15 +34,22 @@ namespace PropuestaResto
 
 
             //visibilidad 
-            divAltaInsumo.Visible = true;
+            ABMINSUMOS.Visible = true;
+            divAltaInsumo.Visible = false;
+            btnAceptarModificarInsumo.Visible = false;
+
+          
+
+            /// configuracion si estamos modificando
 
 
 
 
         }
-
         protected void btnAceptarAgregarInsumo_Click(object sender, EventArgs e)
         {
+   
+
             try
             {
                 InsumoNegocio negocio = new InsumoNegocio();
@@ -63,19 +70,127 @@ namespace PropuestaResto
 
                 throw ex;
             }
-
-
+           
 
         }
-
         protected void btnModificar_Click(object sender, EventArgs e)
         {
 
-        }
+            int id = int.Parse(((Button)sender).CommandArgument);
 
-        protected void btnElimianr_Click(object sender, EventArgs e)
+            InsumoNegocio negocio = new InsumoNegocio();
+            List<Insumo> lista = negocio.ListarXId(id);
+
+            Insumo seleccionado = lista[0];
+
+            // pre cargar campos..
+
+            ddlTipoInsumos.DataSource = negocio.ListarTipoInsumo();
+            ddlTipoInsumos.DataValueField = "IdTipoInsumo";
+            ddlTipoInsumos.DataTextField = "DescripcionTipo";
+
+            txtIdInsumo.Text = id.ToString();
+            txtDescripcionInsumo.Text = seleccionado.Descripcion;
+            txtCantidadInsumo.Text = seleccionado.Cantidad.ToString();
+            txtPrecioInsumo.Text = seleccionado.Precio.ToString();
+            ddlTipoInsumos.SelectedValue = seleccionado.IdTipoInsumo.IdtipoInsumo.ToString();
+            ddlTipoInsumos.DataBind();
+            ABMINSUMOS.Visible = true;
+            divAltaInsumo.Visible = true;
+            btnAceptarAgregarInsumo.Visible = false;
+            btnAceptarModificarInsumo.Visible = true;
+
+
+
+
+
+
+        }
+        protected void btnEliminar_Click(object sender, EventArgs e)
         {
 
+            try
+            {
+                Insumo insumo = new Insumo();
+                InsumoNegocio negocio = new InsumoNegocio();
+
+                int id = int.Parse(((Button)sender).CommandArgument);
+
+                negocio.BajaLogicaInsumo(id);
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
         }
+        protected void btnAltaInsumo_Click(object sender, EventArgs e)
+        {
+
+            /// VISUALIZACION
+
+
+            InsumoNegocio negocio = new InsumoNegocio();
+
+
+            txtDescripcionInsumo.Text = "";
+            txtCantidadInsumo.Text = "";
+            txtPrecioInsumo.Text = "";
+            ddlTipoInsumos.DataSource = negocio.ListarTipoInsumo();
+            ddlTipoInsumos.DataValueField = "IdTipoInsumo";
+            ddlTipoInsumos.DataTextField = "DescripcionTipo";
+            ddlTipoInsumos.DataBind();
+            ABMINSUMOS.Visible = true;
+            divAltaInsumo.Visible = true;
+            btnAceptarAgregarInsumo.Visible = true;
+            btnAceptarModificarInsumo.Visible = false;
+
+
+        }
+        protected void btnAceptarModificarInsumo_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                Insumo modificado = new Insumo();
+                InsumoNegocio negocio = new InsumoNegocio();
+
+                modificado.IdInsumo = int.Parse(txtIdInsumo.Text);
+                modificado.Descripcion = txtDescripcionInsumo.Text;
+                modificado.Cantidad = int.Parse(txtCantidadInsumo.Text);
+                modificado.Precio = int.Parse(txtPrecioInsumo.Text);
+
+                modificado.IdTipoInsumo = new TipoInsumo();
+                modificado.IdTipoInsumo.IdtipoInsumo = int.Parse(ddlTipoInsumos.SelectedValue);
+
+                negocio.ModificarInsumo(modificado);
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex; 
+            }
+
+
+        }
+        
+        //                                      FIN DE ABM DE INSUMOS
+        
+
+
+        //                                      ABM DE MESEROS
+
+
+
+
+
+
+
+
     }
 }
