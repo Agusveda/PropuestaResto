@@ -15,7 +15,7 @@
 
 
         <div class="col">
-            <asp:Button Text="Dar de alta mesero" class="btn btn-outline-success" runat="server" />
+            <asp:Button Text="ABML DE USUARIOS/MESEROS" class="btn btn-outline-success" runat="server" id="btnAbmUsuarios" OnClick="btnAbmUsuarios_Click" />
         </div>
 
     </div>
@@ -26,11 +26,11 @@
 
 
     <%--                                            INICIO  VISTA ABML INSUMOS                                 --%>
-    <div id="ABMINSUMOS" runat="server">
-        <asp:Button runat="server"  Text="Agregar Insumo" ID="btnAltaInsumo" CssClass="btn btn-primary" OnClick="btnAltaInsumo_Click"/>
+    <div id="ABMINSUMOS" runat="server" visible="false">
+        <asp:Button runat="server" Text="Agregar Insumo" ID="btnAltaInsumo" CssClass="btn btn-primary" OnClick="btnAltaInsumo_Click" />
 
         <div id="divAltaInsumo" runat="server">
-           
+
             <div class="row text-center">
                 <div class="col-6">
                     <div class="mb-3">
@@ -59,7 +59,7 @@
             </div>
 
         </div>
-        <asp:Button runat="server"  Text="Modificar insumo" ID="btnAceptarModificarInsumo" CssClass="btn btn-primary" OnClick="btnAceptarModificarInsumo_Click"/>
+        <asp:Button runat="server" Text="Modificar insumo" ID="btnAceptarModificarInsumo" CssClass="btn btn-primary" OnClick="btnAceptarModificarInsumo_Click" />
 
         <asp:Repeater ID="repInsumos" runat="server">
             <HeaderTemplate>
@@ -91,9 +91,10 @@
         </asp:Repeater>
 
     </div>
-                        <asp:TextBox runat="server" ID="txtIdInsumo" Visible="false"></asp:TextBox>
+    <asp:TextBox runat="server" ID="txtIdInsumo" Visible="false"></asp:TextBox>
 
-     
+
+
 
 
 
@@ -105,4 +106,87 @@
 
 
     <%--                                           FIN  VISTA ABML INSUMOS                                 --%>
+
+
+
+    <%--                                             VISTA ABML USUARIOS                                 --%>
+
+
+    <div id="ABMUSUARIOS" runat="server" visible="false">
+        <asp:Button runat="server" Text="Agregar Usuarios" ID="btnAltaUsuario" CssClass="btn btn-primary" OnClick="btnAltaUsuario_Click" />
+
+        <div id="divAltaUsuario" runat="server">
+
+            <div class="row text-center">
+                <div class="col-6">
+                    <div class="mb-3">
+
+
+                        <label for="txtNombreUsuario" class="form-label">Nombre de usuario:</label>
+                        <asp:TextBox runat="server" ID="txtNombreUsuario" CssClass="form-control"></asp:TextBox>
+                    </div>
+                    <div class="mb-3">
+
+                        <label for="txtPassword" class="form-label">Contraseña:</label>
+                        <asp:TextBox runat="server" ID="txtPassword" CssClass="form-control"></asp:TextBox>
+                    </div>
+                    <div class="mb-3">
+                        <label for="txtNombre" class="form-label">Nombre:</label>
+                        <asp:TextBox runat="server" ID="txtNombre" CssClass="form-control"></asp:TextBox>
+                    </div>
+                    <div class="mb-3">
+                        <label for="txtAppelido" class="form-label">Apellido:</label>
+                        <asp:TextBox runat="server" ID="txtAppelido" CssClass="form-control"></asp:TextBox>
+                    </div>
+                    <div class="mb-3">
+                        <label for="chkEsadmin" class="form-label">Es admin:</label>
+                        <asp:CheckBox runat="server" id="chkEsadmin" Text="Es Admin" />
+                    </div>
+                    <div class="mb-3">
+                        <asp:Button Text="Agregar" runat="server" ID="btnAceptarAgregarUsuario" CssClass="btn btn-primary" OnClick="btnAceptarAgregarUsuario_Click" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <asp:Button runat="server" Text="Modificar Usuario" ID="btnAceptarModificarUsuario" CssClass="btn btn-primary" OnClick="btnAceptarModificarUsuario_Click" />
+
+        <asp:Repeater ID="repUsuarios" runat="server">
+            <HeaderTemplate>
+                <table class="table table-striped">
+                    <tr>
+                        <th>id</th>
+                        <th>Nombre Usuario</th>
+                        <th>Password</th>
+                        <th>Nombre</th>
+                        <th>Apellidop</th>
+                        <th>FechaIngreso</th>
+                        <th>EsAdmin</th>
+                        <th>Accion</th>
+                    </tr>
+            </HeaderTemplate>
+
+            <ItemTemplate>
+                <tr>
+                    <td><%# Eval("IdUsuario") %></td>
+                    <td><%# Eval("NombreUsuario") %></td>
+                    <td><%# Eval("Password") %></td>
+                    <td><%# Eval("Nombre") %></td>
+                    <td><%# Eval("Apellido") %></td>
+                    <td><%# Eval("FechaIngreso") %></td>
+                    <td><%# Eval("EsAdmin") %></td>
+                    <td>
+                        <asp:Button runat="server" ID="btnModificarUsuario" CssClass="btn btn-primary" CommandArgument='<%#Eval("IdUsuario") %>' CommandName="IdInsumo" OnClick="btnModificarUsuario_Click" Text="Modificar" />
+                        <asp:Button runat="server" ID="btnEliminarUsuario" CssClass="btn btn-warning" OnClick="btnEliminarUsuario_Click" CommandArgument='<%#Eval("IdUsuario") %>' CommandName="IdInsumo" Text="Eliminar" />
+                    </td>
+                </tr>
+            </ItemTemplate>
+            <FooterTemplate>
+                </table>
+            </FooterTemplate>
+        </asp:Repeater>
+
+    </div>
+    <asp:TextBox runat="server" ID="TextBox4" Visible="false"></asp:TextBox>
+
 </asp:Content>

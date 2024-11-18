@@ -14,7 +14,6 @@ namespace PropuestaResto
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ABMINSUMOS.Visible = false;
         }
 
         //                                      ABM DE INSUMOSSSSS 
@@ -37,7 +36,7 @@ namespace PropuestaResto
             ABMINSUMOS.Visible = true;
             divAltaInsumo.Visible = false;
             btnAceptarModificarInsumo.Visible = false;
-
+            ABMUSUARIOS.Visible = false;
           
 
             /// configuracion si estamos modificando
@@ -178,19 +177,161 @@ namespace PropuestaResto
 
 
         }
-        
+
         //                                      FIN DE ABM DE INSUMOS
+
+
         
-
-
+        
+        
         //                                      ABM DE MESEROS
 
+        protected void btnAltaUsuario_Click(object sender, EventArgs e)
+        {
+            txtNombreUsuario.Text = "";
+            txtPassword.Text = "";
+            txtNombre.Text = "";
+            txtAppelido.Text = "";
+            chkEsadmin.Checked = false;
+            btnAceptarModificarUsuario.Visible = true;
+            divAltaUsuario.Visible = true;
+            ABMINSUMOS.Visible = false;
+            
 
 
 
 
+        }
+
+        protected void btnAgregarInsumo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnModificarUsuario_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(((Button)sender).CommandArgument);
+
+            MeseroNegocio negocio = new MeseroNegocio();
+            List<Usuario> lista = negocio.ListarXId(id);
+
+            Usuario seleccionado = lista[0];
+
+            // pre cargar campos..
+            txtNombreUsuario.Text = seleccionado.NombreUsuario;
+            txtPassword.Text = seleccionado.Password;
+            txtNombre.Text = seleccionado.Nombre;
+            txtAppelido.Text = seleccionado.Apellido;
+            
+            if (seleccionado.EsAdmin == true)
+            {
+                chkEsadmin.Checked = true;
+            }
+            else
+            {
+                chkEsadmin.Checked = false;
+            }
+            divAltaUsuario.Visible = true;
+            btnAceptarAgregarUsuario.Visible = false;
+            btnAceptarModificarUsuario.Visible = true;
 
 
 
+
+        }
+
+        protected void btnAbmUsuarios_Click(object sender, EventArgs e)
+        {
+            ABMUSUARIOS.Visible = true;
+            divAltaUsuario.Visible = false;
+            btnAceptarModificarUsuario.Visible = false;
+            MeseroNegocio negocio = new MeseroNegocio();
+            ABMINSUMOS.Visible = false;
+
+
+
+            repUsuarios.DataSource = negocio.ListarUsuarios();
+            repUsuarios.DataBind();
+
+
+        }
+
+      
+
+        protected void btnAceptarModificarUsuario_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MeseroNegocio negocio = new MeseroNegocio();
+                Usuario nuevo = new Usuario();
+
+                nuevo.NombreUsuario = txtNombreUsuario.Text;
+                nuevo.Password = txtPassword.Text;
+                nuevo.Nombre= txtNombre.Text;
+                nuevo.Apellido= txtAppelido.Text;
+                
+                if (chkEsadmin.Checked == true)
+                {
+                    nuevo.EsAdmin = true;
+                }
+                else
+                {
+                    nuevo.EsAdmin= false;
+                }
+
+                
+
+
+                negocio.AgregarUsuario(nuevo);
+                Response.Redirect("PantallaAdmin.aspx", false);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
+
+        protected void btnEliminarUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnAceptarAgregarUsuario_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MeseroNegocio negocio = new MeseroNegocio();
+                Usuario nuevo = new Usuario();
+
+                nuevo.NombreUsuario = txtNombreUsuario.Text;
+                nuevo.Password = txtPassword.Text;
+                nuevo.Nombre = txtNombre.Text;
+                nuevo.Apellido = txtAppelido.Text;
+
+                if (chkEsadmin.Checked == true)
+                {
+                    nuevo.EsAdmin = true;
+                }
+                else
+                {
+                    nuevo.EsAdmin = false;
+                }
+
+
+
+
+                negocio.AgregarUsuario(nuevo);
+                Response.Redirect("PantallaAdmin.aspx", false);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+
+        }
     }
 }
