@@ -132,7 +132,7 @@ namespace Negocio
         public void BajaLogicaUsuario(int id)
         {
             AccesoDatos datos = new AccesoDatos();
-
+            MeseroNegocio negocio = new MeseroNegocio();
 
             try
             {
@@ -140,6 +140,8 @@ namespace Negocio
                 datos.setearProcedimiento("delUsuario");
                 datos.setearParametros("@IdUsuario", id);
                 datos.ejecutarAccion();
+
+
 
             }
             catch (Exception ex)

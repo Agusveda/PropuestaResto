@@ -187,6 +187,6 @@
         </asp:Repeater>
 
     </div>
-    <asp:TextBox runat="server" ID="TextBox4" Visible="false"></asp:TextBox>
+    <asp:TextBox runat="server" ID="txtIdUsuario" Visible="false"></asp:TextBox>
 
 </asp:Content>

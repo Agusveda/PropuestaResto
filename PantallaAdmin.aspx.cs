@@ -19,31 +19,8 @@ namespace PropuestaResto
         //                                      ABM DE INSUMOSSSSS 
         protected void btnAbmInsumos_Click(object sender, EventArgs e)
         {
-            // lista actuales
-            /// configuracion si estamos agregando 
-            InsumoNegocio negocio = new InsumoNegocio();
-            repInsumos.DataSource = negocio.ListarConSp();
-            repInsumos.DataBind();
 
-            //desplegable de los tipos de insumo
-            ddlTipoInsumos.DataSource = negocio.ListarTipoInsumo();
-            ddlTipoInsumos.DataValueField = "IdTipoInsumo";
-            ddlTipoInsumos.DataTextField = "DescripcionTipo";
-            ddlTipoInsumos.DataBind();
-
-
-            //visibilidad 
-            ABMINSUMOS.Visible = true;
-            divAltaInsumo.Visible = false;
-            btnAceptarModificarInsumo.Visible = false;
-            ABMUSUARIOS.Visible = false;
-          
-
-            /// configuracion si estamos modificando
-
-
-
-
+            CargarInsumos();
         }
         protected void btnAceptarAgregarInsumo_Click(object sender, EventArgs e)
         {
@@ -62,7 +39,7 @@ namespace PropuestaResto
                 nuevo.IdTipoInsumo.IdtipoInsumo = int.Parse(ddlTipoInsumos.SelectedValue);
 
                 negocio.AgregarInsumo(nuevo);
-                Response.Redirect("PantallaAdmin.aspx", false);
+                CargarInsumos();
             }
             catch (Exception ex)
             {
@@ -116,6 +93,7 @@ namespace PropuestaResto
                 int id = int.Parse(((Button)sender).CommandArgument);
 
                 negocio.BajaLogicaInsumo(id);
+                CargarInsumos();
 
             }
             catch (Exception ex)
@@ -159,12 +137,13 @@ namespace PropuestaResto
                 modificado.IdInsumo = int.Parse(txtIdInsumo.Text);
                 modificado.Descripcion = txtDescripcionInsumo.Text;
                 modificado.Cantidad = int.Parse(txtCantidadInsumo.Text);
-                modificado.Precio = int.Parse(txtPrecioInsumo.Text);
+                modificado.Precio = decimal.Parse(txtPrecioInsumo.Text);
 
                 modificado.IdTipoInsumo = new TipoInsumo();
                 modificado.IdTipoInsumo.IdtipoInsumo = int.Parse(ddlTipoInsumos.SelectedValue);
 
                 negocio.ModificarInsumo(modificado);
+                CargarInsumos();
 
 
 
@@ -177,13 +156,37 @@ namespace PropuestaResto
 
 
         }
+        private void CargarInsumos()
+        {
+            // lista actuales
+            /// configuracion si estamos agregando 
+            InsumoNegocio negocio = new InsumoNegocio();
+            repInsumos.DataSource = negocio.ListarConSp();
+            repInsumos.DataBind();
+
+            //desplegable de los tipos de insumo
+            ddlTipoInsumos.DataSource = negocio.ListarTipoInsumo();
+            ddlTipoInsumos.DataValueField = "IdTipoInsumo";
+            ddlTipoInsumos.DataTextField = "DescripcionTipo";
+            ddlTipoInsumos.DataBind();
+
+
+            //visibilidad 
+            ABMINSUMOS.Visible = true;
+            divAltaInsumo.Visible = false;
+            btnAceptarModificarInsumo.Visible = false;
+            ABMUSUARIOS.Visible = false;
+
+
+            /// configuracion si estamos modificando
+        }
 
         //                                      FIN DE ABM DE INSUMOS
 
 
-        
-        
-        
+
+
+
         //                                      ABM DE MESEROS
 
         protected void btnAltaUsuario_Click(object sender, EventArgs e)
@@ -193,7 +196,7 @@ namespace PropuestaResto
             txtNombre.Text = "";
             txtAppelido.Text = "";
             chkEsadmin.Checked = false;
-            btnAceptarModificarUsuario.Visible = true;
+            btnAceptarAgregarUsuario.Visible = true;
             divAltaUsuario.Visible = true;
             ABMINSUMOS.Visible = false;
             
@@ -218,6 +221,7 @@ namespace PropuestaResto
             Usuario seleccionado = lista[0];
 
             // pre cargar campos..
+            txtIdUsuario.Text = seleccionado.IdUsuario.ToString();
             txtNombreUsuario.Text = seleccionado.NombreUsuario;
             txtPassword.Text = seleccionado.Password;
             txtNombre.Text = seleccionado.Nombre;
@@ -242,17 +246,8 @@ namespace PropuestaResto
 
         protected void btnAbmUsuarios_Click(object sender, EventArgs e)
         {
-            ABMUSUARIOS.Visible = true;
-            divAltaUsuario.Visible = false;
-            btnAceptarModificarUsuario.Visible = false;
-            MeseroNegocio negocio = new MeseroNegocio();
-            ABMINSUMOS.Visible = false;
 
-
-
-            repUsuarios.DataSource = negocio.ListarUsuarios();
-            repUsuarios.DataBind();
-
+            CargarUsuario();
 
         }
 
@@ -264,6 +259,7 @@ namespace PropuestaResto
             {
                 MeseroNegocio negocio = new MeseroNegocio();
                 Usuario nuevo = new Usuario();
+                nuevo.IdUsuario = int.Parse(txtIdUsuario.Text);
 
                 nuevo.NombreUsuario = txtNombreUsuario.Text;
                 nuevo.Password = txtPassword.Text;
@@ -282,8 +278,10 @@ namespace PropuestaResto
                 
 
 
-                negocio.AgregarUsuario(nuevo);
-                Response.Redirect("PantallaAdmin.aspx", false);
+                negocio.ModificarUsuario(nuevo);
+                btnAceptarModificarUsuario.Visible = false;
+                CargarUsuario();
+
             }
             catch (Exception ex)
             {
@@ -296,7 +294,40 @@ namespace PropuestaResto
         protected void btnEliminarUsuario_Click(object sender, EventArgs e)
         {
 
+            try
+            {
+                Usuario usuario = new Usuario();
+                MeseroNegocio negocio = new MeseroNegocio();
+
+                int id = int.Parse(((Button)sender).CommandArgument);
+
+                negocio.BajaLogicaUsuario(id);
+
+                CargarUsuario(); 
+             
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
         }
+        private void CargarUsuario()
+        {
+            ABMUSUARIOS.Visible = true;
+            divAltaUsuario.Visible = false;
+            btnAceptarModificarUsuario.Visible = false;
+            MeseroNegocio negocio = new MeseroNegocio();
+            ABMINSUMOS.Visible = false;
+
+
+
+            repUsuarios.DataSource = negocio.ListarUsuarios();
+            repUsuarios.DataBind();
+        }
+
 
         protected void btnAceptarAgregarUsuario_Click(object sender, EventArgs e)
         {
@@ -323,7 +354,7 @@ namespace PropuestaResto
 
 
                 negocio.AgregarUsuario(nuevo);
-                Response.Redirect("PantallaAdmin.aspx", false);
+                CargarUsuario();
             }
             catch (Exception ex)
             {
