@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Negocio
 {
-    public class MeseroNegocio
+    public class UsuarioNegocio
     {
         public List<Usuario> ListarUsuarios()
         {
@@ -128,11 +128,10 @@ namespace Negocio
 
             }
         }
-
         public void BajaLogicaUsuario(int id)
         {
             AccesoDatos datos = new AccesoDatos();
-            MeseroNegocio negocio = new MeseroNegocio();
+            UsuarioNegocio negocio = new UsuarioNegocio();
 
             try
             {

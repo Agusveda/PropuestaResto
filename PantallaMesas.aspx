@@ -17,22 +17,26 @@
     }
 
 </style>
-    <div class="container ">
-        <div class="row">
-            <div class="col">mesa 1</div>
-            <div class="col">mesa 2</div>
-            <div class="col">mesa 3</div>
-            <div class="col">mesa 4</div>
-        </div>
-        <div class="row">
+   
 
-            <div class="col">mesa 5</div>
-            <div class="col">mesa 6</div>
-            <div class="col">mesa 7</div>
-            <div class="col">mesa 8</div>
 
-        </div>
-    </div>
+    <asp:Repeater runat="server" ID="rptMesas">
+        <ItemTemplate>
+            <div class="col">
+                <div class="card">
+
+                    <h5 class="card-tittle" > <%#Eval("IdMesa") %></h5>
+
+                </div>
+
+
+            </div>
+
+
+
+
+        </ItemTemplate>
+    </asp:Repeater>
 
 
 

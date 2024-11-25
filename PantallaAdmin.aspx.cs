@@ -215,7 +215,7 @@ namespace PropuestaResto
         {
             int id = int.Parse(((Button)sender).CommandArgument);
 
-            MeseroNegocio negocio = new MeseroNegocio();
+            UsuarioNegocio negocio = new UsuarioNegocio();
             List<Usuario> lista = negocio.ListarXId(id);
 
             Usuario seleccionado = lista[0];
@@ -257,7 +257,7 @@ namespace PropuestaResto
         {
             try
             {
-                MeseroNegocio negocio = new MeseroNegocio();
+                UsuarioNegocio negocio = new UsuarioNegocio();
                 Usuario nuevo = new Usuario();
                 nuevo.IdUsuario = int.Parse(txtIdUsuario.Text);
 
@@ -297,7 +297,7 @@ namespace PropuestaResto
             try
             {
                 Usuario usuario = new Usuario();
-                MeseroNegocio negocio = new MeseroNegocio();
+                UsuarioNegocio negocio = new UsuarioNegocio();
 
                 int id = int.Parse(((Button)sender).CommandArgument);
 
@@ -319,7 +319,7 @@ namespace PropuestaResto
             ABMUSUARIOS.Visible = true;
             divAltaUsuario.Visible = false;
             btnAceptarModificarUsuario.Visible = false;
-            MeseroNegocio negocio = new MeseroNegocio();
+            UsuarioNegocio negocio = new UsuarioNegocio();
             ABMINSUMOS.Visible = false;
 
 
@@ -333,7 +333,7 @@ namespace PropuestaResto
         {
             try
             {
-                MeseroNegocio negocio = new MeseroNegocio();
+                UsuarioNegocio negocio = new UsuarioNegocio();
                 Usuario nuevo = new Usuario();
 
                 nuevo.NombreUsuario = txtNombreUsuario.Text;
