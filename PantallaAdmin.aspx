@@ -15,7 +15,7 @@
 
 
         <div class="col">
-            <asp:Button Text="ABML DE USUARIOS/MESEROS" class="btn btn-outline-success" runat="server" id="btnAbmUsuarios" OnClick="btnAbmUsuarios_Click" />
+            <asp:Button Text="ABML DE USUARIOS/MESEROS" class="btn btn-outline-success" runat="server" ID="btnAbmUsuarios" OnClick="btnAbmUsuarios_Click" />
         </div>
 
     </div>
@@ -140,7 +140,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="chkEsadmin" class="form-label">Es admin:</label>
-                        <asp:CheckBox runat="server" id="chkEsadmin" Text="Es Admin" />
+                        <asp:CheckBox runat="server" ID="chkEsadmin" Text="Es Admin" />
                     </div>
                     <div class="mb-3">
                         <asp:Button Text="Agregar" runat="server" ID="btnAceptarAgregarUsuario" CssClass="btn btn-primary" OnClick="btnAceptarAgregarUsuario_Click" />

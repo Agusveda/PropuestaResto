@@ -4,40 +4,45 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<style>
-     .col {
-        width: 100px;
-        height: 100px;
-        background-color: lightgray;
-        border: 2px solid black;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-    }
-
-</style>
-   
 
 
-    <asp:Repeater runat="server" ID="rptMesas">
+
+
+
+
+    <asp:Repeater ID="rptMesas" runat="server">
+        <HeaderTemplate>
+            <table class="table table-striped">
+                <tr>
+                    <th>Numero de mesa</th>
+                    <th>Disponible</th>
+                    <th>Acciones</th>
+
+                </tr>
+        </HeaderTemplate>
+
         <ItemTemplate>
-            <div class="col">
-                <div class="card">
+            <tr>
+                <td>
+                    <h5 class="card-tittle"><%#Eval("IdMesa") %></h5>
 
-                    <h5 class="card-tittle" > <%#Eval("IdMesa") %></h5>
+                </td>
+                <td>
 
-                </div>
+                    <h1 class="card-text"><%#Eval("Disponible") %></h1>
 
-
-            </div>
-
-
-
-
+                </td>
+                <td>
+                    <a href="PantallaPedido.aspx?IdMesa=<%#Eval("IdMesa") %> "> Agregar Pedido</a>
+<%--                    <asp:Button runat="server" ID="BtnAgregarPedido" CssClass="btn btn-primary" CommandArgument='<%#Eval("IdMesa") %>' CommandName="IdMesa" OnClick="BtnAgregarPedido_Click" Text="Agregar Pedido" />--%>
+                    <asp:Button runat="server" ID="btnEliminarPedido" CssClass="btn btn-warning" CommandArgument='<%#Eval("IdMesa") %>' CommandName="IdMesa" OnClick="btnEliminarPedido_Click" Text="Eliminar Pedido" />
+                </td>
+            </tr>
         </ItemTemplate>
+        <FooterTemplate>
+            </table>
+        </FooterTemplate>
     </asp:Repeater>
-
 
 
 

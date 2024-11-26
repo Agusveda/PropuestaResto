@@ -3,20 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{583F4CE9-B029-4E3C-BE30-4D9ACA36CAFF}|Negocio\\Negocio.csproj|c:\\users\\usuario\\documents\\github\\repositorios\\propuestaresto\\negocio\\pedidonegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{583F4CE9-B029-4E3C-BE30-4D9ACA36CAFF}|Negocio\\Negocio.csproj|solutionrelative:negocio\\pedidonegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20F24E92-3A41-4926-9543-C79219390B47}|Dominio\\Dominio.csproj|c:\\users\\usuario\\documents\\github\\repositorios\\propuestaresto\\dominio\\detallepedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20F24E92-3A41-4926-9543-C79219390B47}|Dominio\\Dominio.csproj|solutionrelative:dominio\\detallepedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20F24E92-3A41-4926-9543-C79219390B47}|Dominio\\Dominio.csproj|c:\\users\\usuario\\documents\\github\\repositorios\\propuestaresto\\dominio\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20F24E92-3A41-4926-9543-C79219390B47}|Dominio\\Dominio.csproj|solutionrelative:dominio\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{583F4CE9-B029-4E3C-BE30-4D9ACA36CAFF}|Negocio\\Negocio.csproj|c:\\users\\usuario\\documents\\github\\repositorios\\propuestaresto\\negocio\\insumonegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{583F4CE9-B029-4E3C-BE30-4D9ACA36CAFF}|Negocio\\Negocio.csproj|solutionrelative:negocio\\insumonegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|c:\\users\\usuario\\documents\\github\\repositorios\\propuestaresto\\pantallamesas.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|solutionrelative:pantallamesas.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|c:\\users\\usuario\\documents\\github\\repositorios\\propuestaresto\\pantallapedido.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|solutionrelative:pantallapedido.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|c:\\users\\usuario\\documents\\github\\repositorios\\propuestaresto\\pantallapedido.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|solutionrelative:pantallapedido.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|c:\\users\\usuario\\documents\\github\\repositorios\\propuestaresto\\pantallamesas.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|solutionrelative:pantallamesas.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{583F4CE9-B029-4E3C-BE30-4D9ACA36CAFF}|Negocio\\Negocio.csproj|c:\\users\\usuario\\documents\\github\\repositorios\\propuestaresto\\negocio\\usuarionegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{583F4CE9-B029-4E3C-BE30-4D9ACA36CAFF}|Negocio\\Negocio.csproj|solutionrelative:negocio\\usuarionegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{583F4CE9-B029-4E3C-BE30-4D9ACA36CAFF}|Negocio\\Negocio.csproj|c:\\users\\usuario\\documents\\github\\repositorios\\propuestaresto\\negocio\\mesanegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{583F4CE9-B029-4E3C-BE30-4D9ACA36CAFF}|Negocio\\Negocio.csproj|solutionrelative:negocio\\mesanegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|c:\\users\\usuario\\documents\\github\\repositorios\\propuestaresto\\pantallaadmin.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|solutionrelative:pantallaadmin.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|c:\\users\\usuario\\documents\\github\\repositorios\\propuestaresto\\pantallaadmin.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|solutionrelative:pantallaadmin.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{583F4CE9-B029-4E3C-BE30-4D9ACA36CAFF}|Negocio\\Negocio.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\negocio\\mesanegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{583F4CE9-B029-4E3C-BE30-4D9ACA36CAFF}|Negocio\\Negocio.csproj|solutionrelative:negocio\\mesanegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,50 +54,115 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DetallePedido.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\Dominio\\DetallePedido.cs",
+              "RelativeDocumentMoniker": "Dominio\\DetallePedido.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\Dominio\\DetallePedido.cs",
+              "RelativeToolTip": "Dominio\\DetallePedido.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T01:46:46.092Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Pedido.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\Dominio\\Pedido.cs",
+              "RelativeDocumentMoniker": "Dominio\\Pedido.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\Dominio\\Pedido.cs",
+              "RelativeToolTip": "Dominio\\Pedido.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T01:40:00.892Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "InsumoNegocio.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\Negocio\\InsumoNegocio.cs",
+              "RelativeDocumentMoniker": "Negocio\\InsumoNegocio.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\Negocio\\InsumoNegocio.cs",
+              "RelativeToolTip": "Negocio\\InsumoNegocio.cs",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAowFUAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T01:37:36.748Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PedidoNegocio.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\Negocio\\PedidoNegocio.cs",
+              "RelativeDocumentMoniker": "Negocio\\PedidoNegocio.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\Negocio\\PedidoNegocio.cs",
+              "RelativeToolTip": "Negocio\\PedidoNegocio.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAIwBcAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T01:37:25.564Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PantallaPedido.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\PantallaPedido.aspx.cs",
+              "RelativeDocumentMoniker": "PantallaPedido.aspx.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\PantallaPedido.aspx.cs",
+              "RelativeToolTip": "PantallaPedido.aspx.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAA0wC4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T00:44:09.406Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PantallaPedido.aspx",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\PantallaPedido.aspx",
+              "RelativeDocumentMoniker": "PantallaPedido.aspx",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\PantallaPedido.aspx",
+              "RelativeToolTip": "PantallaPedido.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-11-26T00:37:12.356Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PantallaMesas.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\PantallaMesas.aspx.cs",
+              "RelativeDocumentMoniker": "PantallaMesas.aspx.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\PantallaMesas.aspx.cs",
+              "RelativeToolTip": "PantallaMesas.aspx.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAgwCEAAABFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T22:34:39.49Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "MesaNegocio.cs",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\Negocio\\MesaNegocio.cs",
               "RelativeDocumentMoniker": "Negocio\\MesaNegocio.cs",
               "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\Negocio\\MesaNegocio.cs",
               "RelativeToolTip": "Negocio\\MesaNegocio.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAUwAwAAAAlAAAA",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAiwAwAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-25T00:30:10.303Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UsuarioNegocio.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\Negocio\\UsuarioNegocio.cs",
-              "RelativeDocumentMoniker": "Negocio\\UsuarioNegocio.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\Negocio\\UsuarioNegocio.cs",
-              "RelativeToolTip": "Negocio\\UsuarioNegocio.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAQwIIAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T00:22:31.635Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PantallaAdmin.aspx",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\PantallaAdmin.aspx",
-              "RelativeDocumentMoniker": "PantallaAdmin.aspx",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\PantallaAdmin.aspx",
-              "RelativeToolTip": "PantallaAdmin.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-11-25T00:00:51.664Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "PantallaMesas.aspx",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\PantallaMesas.aspx",
               "RelativeDocumentMoniker": "PantallaMesas.aspx",
@@ -78,6 +171,53 @@
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
               "WhenOpened": "2024-11-24T23:58:24.678Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "cd3b9a4b-1882-48ed-920d-ffd963bf0ffd",
+        "Display": 1,
+        "X": -5,
+        "Y": 211,
+        "Width": 1638,
+        "Height": 826,
+        "WindowState": 2
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PantallaAdmin.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\PantallaAdmin.aspx.cs",
+              "RelativeDocumentMoniker": "PantallaAdmin.aspx.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\PantallaAdmin.aspx.cs",
+              "RelativeToolTip": "PantallaAdmin.aspx.cs",
+              "ViewState": "AQIAAIwAAAAAAAAAAAAuwJ4AAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T22:37:48.493Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "PantallaAdmin.aspx",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\PantallaAdmin.aspx",
+              "RelativeDocumentMoniker": "PantallaAdmin.aspx",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\PantallaAdmin.aspx",
+              "RelativeToolTip": "PantallaAdmin.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-11-25T23:24:38.545Z",
               "EditorCaption": ""
             }
           ]
