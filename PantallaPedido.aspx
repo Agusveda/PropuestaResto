@@ -52,15 +52,18 @@
     </HeaderTemplate>
 
     <ItemTemplate>
-        <tr>
-            <td><%# Eval("Descripcion") %></td>
-            <td><%# Eval("Cantidad") %></td>
-            <td><%# Eval("Precio") %></td>
-            <td>
-                <asp:Button runat="server" ID="btnEliminar" CssClass="btn btn-danger" CommandArgument='<%# Eval("IdInsumo") %>' OnClick="btnEliminar_Click" Text="Eliminar" />
-            </td>
-        </tr>
-    </ItemTemplate>
+    <tr>
+        <td><%# Eval("Descripcion") %></td>
+        <td><%# Eval("Cantidad") %></td>
+        <td><%# Eval("Precio") %></td>
+        <td>
+            <asp:Button runat="server" ID="btnAumentar" CssClass="btn btn-success" CommandArgument='<%# Eval("IdInsumo") %>' OnClick="btnAumentar_Click" Text="+" />
+            <asp:Button runat="server" ID="btnDisminuir" CssClass="btn btn-warning" CommandArgument='<%# Eval("IdInsumo") %>' OnClick="btnDisminuir_Click" Text="-" />
+            <asp:Button runat="server" ID="btnEliminar" CssClass="btn btn-danger" CommandArgument='<%# Eval("IdInsumo") %>' OnClick="btnEliminar_Click" Text="Eliminar" />
+        </td>
+    </tr>
+</ItemTemplate>
+
 
     <FooterTemplate>
         </table>

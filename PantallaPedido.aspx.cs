@@ -42,16 +42,62 @@ namespace PropuestaResto
             int idInsumo = int.Parse(btn.CommandArgument);
 
             InsumoNegocio negocio = new InsumoNegocio();
-            Insumo insu = negocio.ListarConSp().Find(i => i.IdInsumo == idInsumo); // nota: metodo FIND busca en la lista lo que coincida con lo q definas
+            Insumo insu = negocio.ListarConSp().Find(i => i.IdInsumo == idInsumo);
 
             if (insu != null)
             {
                 List<Insumo> pedidoTemporal = (List<Insumo>)Session["PedidoTemporal"];
-                pedidoTemporal.Add(insu);
+
+                Insumo insumoExistente = pedidoTemporal.Find(i => i.IdInsumo == idInsumo);
+                if (insumoExistente != null)
+                {
+          
+                    insumoExistente.Cantidad += 1;
+                }
+                else
+                {
+               
+                    insu.Cantidad = 1;
+                    pedidoTemporal.Add(insu);
+                }
+
                 Session["PedidoTemporal"] = pedidoTemporal;
                 CargarDetallePedido();
             }
         }
+
+        protected void btnAumentar_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            int idInsumo = int.Parse(btn.CommandArgument);
+
+            List<Insumo> pedidoTemporal = (List<Insumo>)Session["PedidoTemporal"];
+            Insumo insumo = pedidoTemporal.Find(i => i.IdInsumo == idInsumo);
+            if (insumo != null)
+            {
+                insumo.Cantidad += 1;
+                CargarDetallePedido();
+            }
+        }
+
+        protected void btnDisminuir_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            int idInsumo = int.Parse(btn.CommandArgument);
+
+            List<Insumo> pedidoTemporal = (List<Insumo>)Session["PedidoTemporal"];
+            Insumo insumo = pedidoTemporal.Find(i => i.IdInsumo == idInsumo);
+            if (insumo != null)
+            {
+                insumo.Cantidad -= 1;
+                if (insumo.Cantidad <= 0)
+                {
+                    pedidoTemporal.Remove(insumo); // Eliminar si la cantidad es 0
+                }
+                CargarDetallePedido();
+            }
+        }
+
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -62,7 +108,7 @@ namespace PropuestaResto
             Insumo insumoAEliminar = pedidoTemporal.Find(i => i.IdInsumo == idInsumo);
             if (insumoAEliminar != null)
             {
-                pedidoTemporal.Remove(insumoAEliminar);
+                pedidoTemporal.Remove(insumoAEliminar); // nota: remove elimina el insumo elegido
                 Session["PedidoTemporal"] = pedidoTemporal;
                 CargarDetallePedido();
             }
@@ -71,6 +117,13 @@ namespace PropuestaResto
         protected void btnConfirmarPedido_Click(object sender, EventArgs e)
         {
             List<Insumo> pedidoTemporal = (List<Insumo>)Session["PedidoTemporal"];
+
+
+
+
+
+
+
         }
     }
 }
