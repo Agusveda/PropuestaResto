@@ -12,6 +12,9 @@ namespace Dominio
         public int IdMesa { get; set; }
         public int IdUsuario { get; set; }
         public decimal Precio { get; set; } // precio del producto, luego realizaria la suma total
+        public bool Finalizado{ get; set; }
+        public DateTime FechaHora { get; set; }
+
     }
 
 }

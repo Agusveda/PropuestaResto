@@ -60,6 +60,28 @@ namespace Negocio
         }
 
 
+        public void ActualizarMesa(int idmesa , bool disponible)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearProcedimiento("updMesa");
+                datos.setearParametros("@IdMesa", idmesa);
+                datos.setearParametros("@disponible", disponible);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+
+
+            }
+        }
 
 
 

@@ -4,23 +4,33 @@ using System.Collections.Generic;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Dominio;
+using System.Linq;
 
 namespace PropuestaResto
 {
     public partial class PantallaPedido : System.Web.UI.Page
     {
+        int IdMesa;
         protected void Page_Load(object sender, EventArgs e)
         {
-            int IdMesa = int.Parse(Request.QueryString["IdMesa"].ToString());
+            IdMesa = int.Parse(Request.QueryString["IdMesa"].ToString());
             lbIdMesa.Text = "Mesa número: " + IdMesa;
 
             if (!IsPostBack)
             {
                 CargarInsumos();
-                Session["PedidoTemporal"] = new List<Insumo>();
+
+                if (Session["PedidoTemporal"] == null)
+                {
+                    // Cargar detalles si existen pedidos previos
+                    PedidoNegocio negocio = new PedidoNegocio();
+                    Session["PedidoTemporal"] = negocio.ObtenerDetallePedidoPorMesa(IdMesa);
+                }
+
                 CargarDetallePedido();
             }
         }
+
 
         private void CargarInsumos()
         {
@@ -116,8 +126,41 @@ namespace PropuestaResto
 
         protected void btnConfirmarPedido_Click(object sender, EventArgs e)
         {
-            List<Insumo> pedidoTemporal = (List<Insumo>)Session["PedidoTemporal"];
+        
+                List<Insumo> pedidoTemporal = (List<Insumo>)Session["PedidoTemporal"];
+                MesaNegocio negociomesa = new MesaNegocio();
+            
+            // actualizo mesa para q este en no disponible
 
+                negociomesa.ActualizarMesa(IdMesa, false);
+
+                PedidoNegocio pedidoNegocio = new PedidoNegocio();
+                Pedido nuevoPedido = new Pedido
+                {
+                    IdMesa = IdMesa,
+                    IdUsuario = 1, 
+                    Precio = pedidoTemporal.Sum(i => i.Precio * i.Cantidad),
+                    Finalizado = false,
+                    FechaHora = DateTime.Now
+                };
+            
+                //cargo el pedido completo
+                pedidoNegocio.AgregarPedido(nuevoPedido);
+
+            int idpedido = pedidoNegocio.ObtenerUltimoIdPedido();
+            // agrego detall pedido
+
+            foreach (Insumo insu in pedidoTemporal)
+            {
+                pedidoNegocio.AgregarDetallePedido(insu, idpedido);
+            }
+
+            Session["PedidoTemporal"] = null;
+
+            //    CargarDetallePedido();
+            Response.Redirect("PantallaMesas.aspx", false);
+
+            }
 
 
 
@@ -126,4 +169,4 @@ namespace PropuestaResto
 
         }
     }
-}
+
