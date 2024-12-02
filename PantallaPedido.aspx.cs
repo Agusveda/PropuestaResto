@@ -20,9 +20,15 @@ namespace PropuestaResto
             {
                 CargarInsumos();
 
+               
+                if (Session["IdMesaActual"] == null || (int)Session["IdMesaActual"] != IdMesa)
+                {
+                    Session["PedidoTemporal"] = null;
+                    Session["IdMesaActual"] = IdMesa;
+                }
+
                 if (Session["PedidoTemporal"] == null)
                 {
-                    // Cargar detalles si existen pedidos previos
                     PedidoNegocio negocio = new PedidoNegocio();
                     Session["PedidoTemporal"] = negocio.ObtenerDetallePedidoPorMesa(IdMesa);
                 }
@@ -30,6 +36,7 @@ namespace PropuestaResto
                 CargarDetallePedido();
             }
         }
+
 
 
         private void CargarInsumos()
