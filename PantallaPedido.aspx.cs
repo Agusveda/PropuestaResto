@@ -20,22 +20,29 @@ namespace PropuestaResto
             {
                 CargarInsumos();
 
-               
-                if (Session["IdMesaActual"] == null || (int)Session["IdMesaActual"] != IdMesa)
-                {
-                    Session["PedidoTemporal"] = null;
-                    Session["IdMesaActual"] = IdMesa;
-                }
+                PedidoNegocio negocio = new PedidoNegocio();
+                Pedido pedidoActual = negocio.ObtenerPedidoActivoPorMesa(IdMesa);
 
-                if (Session["PedidoTemporal"] == null)
+                if (pedidoActual != null)
                 {
-                    PedidoNegocio negocio = new PedidoNegocio();
-                    Session["PedidoTemporal"] = negocio.ObtenerDetallePedidoPorMesa(IdMesa);
+                    Session["IdPedidoActual"] = pedidoActual.IdPedido;
+
+                    // Solo cargar los insumos si PedidoTemporal está vacío o nulo
+                    if (Session["PedidoTemporal"] == null || ((List<Insumo>)Session["PedidoTemporal"]).Count == 0)
+                    {
+                        Session["PedidoTemporal"] = negocio.ObtenerDetallePedidoPorId(pedidoActual.IdPedido);
+                    }
+                }
+                else
+                {
+                    Session["PedidoTemporal"] = new List<Insumo>();
                 }
 
                 CargarDetallePedido();
             }
         }
+
+
 
 
 
@@ -59,7 +66,7 @@ namespace PropuestaResto
             int idInsumo = int.Parse(btn.CommandArgument);
 
             InsumoNegocio negocio = new InsumoNegocio();
-            Insumo insu = negocio.ListarConSp().Find(i => i.IdInsumo == idInsumo);
+            Insumo insu = negocio.ListarConSp().Find(i => i.IdInsumo == idInsumo); // nota: busca en la lista. 
 
             if (insu != null)
             {
@@ -133,47 +140,67 @@ namespace PropuestaResto
 
         protected void btnConfirmarPedido_Click(object sender, EventArgs e)
         {
-        
-                List<Insumo> pedidoTemporal = (List<Insumo>)Session["PedidoTemporal"];
-                MesaNegocio negociomesa = new MesaNegocio();
-            
-            // actualizo mesa para q este en no disponible
+            PedidoNegocio pedidoNegocio = new PedidoNegocio();
+            List<Insumo> pedidoTemporal = (List<Insumo>)Session["PedidoTemporal"];
+            MesaNegocio mesaNegocio = new MesaNegocio();
 
-                negociomesa.ActualizarMesa(IdMesa, false);
 
-                PedidoNegocio pedidoNegocio = new PedidoNegocio();
+            if (Session["IdPedidoActual"] == null)
+            {
                 Pedido nuevoPedido = new Pedido
                 {
                     IdMesa = IdMesa,
-                    IdUsuario = 1, 
+                    IdUsuario = 1,
                     Precio = pedidoTemporal.Sum(i => i.Precio * i.Cantidad),
                     Finalizado = false,
-                    FechaHora = DateTime.Now
+                 
                 };
-            
-                //cargo el pedido completo
+
                 pedidoNegocio.AgregarPedido(nuevoPedido);
+                int idPedido = pedidoNegocio.ObtenerUltimoIdPedido();
+                Session["IdPedidoActual"] = idPedido;
+            }
+            else
+            {
+                int idPedido = (int)Session["IdPedidoActual"];
+                pedidoNegocio.ActualizarPrecioPedido(idPedido, pedidoTemporal.Sum(i => i.Precio * i.Cantidad));
+            }
 
-            int idpedido = pedidoNegocio.ObtenerUltimoIdPedido();
-            // agrego detall pedido
-
+            int idpedido = (int)Session["IdPedidoActual"];
             foreach (Insumo insu in pedidoTemporal)
             {
                 pedidoNegocio.AgregarDetallePedido(insu, idpedido);
             }
-
-            Session["PedidoTemporal"] = null;
-
-            //    CargarDetallePedido();
-            Response.Redirect("PantallaMesas.aspx", false);
-
-            }
+            mesaNegocio.ActualizarMesa(IdMesa, false);
 
 
-
-
-
+            CargarDetallePedido();
+            Response.Redirect("PantallaMesas.aspx");
 
         }
+
+
+        protected void btnFinalizarPedido_Click(object sender, EventArgs e)
+        {
+            if (Session["IdPedidoActual"] != null)
+            {
+                int idPedido = (int)Session["IdPedidoActual"];
+                PedidoNegocio negocio = new PedidoNegocio();
+                MesaNegocio mesaNegocio = new MesaNegocio();
+
+                negocio.FinalizarPedido(idPedido);
+
+            
+                mesaNegocio.ActualizarMesa(IdMesa, true);
+
+                // Limpiar la sesión
+                Session["IdPedidoActual"] = null;
+                Session["PedidoTemporal"] = null;
+
+                Response.Redirect("PantallaMesas.aspx");
+            }
+        }
+
     }
+}
 

@@ -72,6 +72,7 @@
 
 <asp:Button ID="btnConfirmarPedido" runat="server" CssClass="btn btn-success" OnClick="btnConfirmarPedido_Click" Text="Confirmar Pedido" />
 
+    <asp:Button ID="btnFinalizarPedido" runat="server" CssClass="btn btn-danger" OnClick="btnFinalizarPedido_Click" Text="Finalizar Pedido" />
 
 
 

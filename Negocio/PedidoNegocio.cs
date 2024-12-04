@@ -131,6 +131,114 @@ namespace Negocio
             }
             return lista;
         }
+        public List<Insumo> ObtenerDetallePedidoPorId(int idPedido)
+        {
+            List<Insumo> lista = new List<Insumo>();
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearProcedimiento("ObtenerDetallePedidoPorId");
+                datos.setearParametros("@IdPedido", idPedido);
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    Insumo insumo = new Insumo
+                    {
+                        IdInsumo = (int)datos.Lector["IdInsumo"],
+                        Descripcion = (string)datos.Lector["Descripcion"],
+                        Cantidad = (int)datos.Lector["Cantidad"],
+                        Precio = (decimal)datos.Lector["Precio"]
+                    };
+                    lista.Add(insumo);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+            return lista;
+        }
+
+
+        public Pedido ObtenerPedidoActivoPorMesa(int idMesa)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            Pedido pedido = null;
+
+            try
+            {
+                datos.setearProcedimiento("ObtenerPedidoActivoPorMesa");
+                datos.setearParametros("@IdMesa", idMesa);
+                datos.ejecutarLectura();
+
+                if (datos.Lector.Read())
+                {
+                    pedido = new Pedido
+                    {
+                        IdPedido = (int)datos.Lector["IdPedido"],
+                        IdMesa = (int)datos.Lector["IdMesa"],
+                        IdUsuario = (int)datos.Lector["IdUsuario"],
+                        Precio = (decimal)datos.Lector["Precio"],
+                        Finalizado = (bool)datos.Lector["Finalizado"],
+                        FechaHora = (DateTime)datos.Lector["FechaHora"]
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+            return pedido;
+        }
+        public void FinalizarPedido(int idPedido)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearProcedimiento("FinalizarPedido");
+                datos.setearParametros("@IdPedido", idPedido);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+        public void ActualizarPrecioPedido(int idPedido, decimal nuevoPrecio)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearProcedimiento("ActualizarPrecioPedido");
+                datos.setearParametros("@IdPedido", idPedido);
+                datos.setearParametros("@NuevoPrecio", nuevoPrecio);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
 
 
         public int ObtenerUltimoIdPedido()
