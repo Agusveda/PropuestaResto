@@ -220,6 +220,26 @@ namespace Negocio
                 datos.cerrarConexion();
             }
         }
+
+        public void EliminarInsumoDelPedido(int idinsumo, int idPedido)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearProcedimiento("EliminarInsumoDelPedido");
+                datos.setearParametros("@idpedido", idPedido);
+                datos.setearParametros("@idInsumo", idinsumo);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
         public void ActualizarPrecioPedido(int idPedido, decimal nuevoPrecio)
         {
             AccesoDatos datos = new AccesoDatos();
