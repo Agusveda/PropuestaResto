@@ -84,6 +84,35 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
+                // Verificar si el insumo ya está en el detalle del pedido
+                datos.setearProcedimiento("VerificarInsumoEnDetallePedido");
+                datos.setearParametros("@IdPedido", idpedido);
+                datos.setearParametros("@IdInsumo", insumo.IdInsumo);
+                datos.ejecutarLectura();
+
+                if (datos.Lector.Read())
+                {
+                    // Obtener la cantidad actual 
+                    int cantidadActual = (int)datos.Lector["Cantidad"];
+
+                    // cierro por excepcion
+                    datos.cerrarConexion();
+
+                    // si el pedido existe se modifica la cantidad, significa que se modifico la cantiadad mas o menos.
+                    datos = new AccesoDatos();
+                    datos.setearProcedimiento("ActualizarCantidadInsumo");
+                    datos.setearParametros("@IdPedido", idpedido);
+                    datos.setearParametros("@IdInsumo", insumo.IdInsumo);
+                    datos.setearParametros("@NuevaCantidad", cantidadActual + insumo.Cantidad);
+                    datos.ejecutarAccion();
+                    return;
+                }
+
+               // cierro la conexion para que no me traiga excepcion
+                datos.cerrarConexion();
+
+                // abro de nuevo la conexion
+                datos = new AccesoDatos();
                 datos.setearProcedimiento("insDetallePedido");
                 datos.setearParametros("@IdPedido", idpedido);
                 datos.setearParametros("@IdInsumo", insumo.IdInsumo);
@@ -97,9 +126,12 @@ namespace Negocio
             }
             finally
             {
-                datos.cerrarConexion();
+                datos.cerrarConexion(); // Cerrar conexión finalmente
             }
         }
+
+
+
 
 
 
@@ -221,6 +253,25 @@ namespace Negocio
             }
         }
 
+
+        public void EliminarTodosInsumosDelPedido(int idPedido)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearProcedimiento("EliminarTodosInsumosDelPedido");
+                datos.setearParametros("@IdPedido", idPedido);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
         public void EliminarInsumoDelPedido(int idinsumo, int idPedido)
         {
             AccesoDatos datos = new AccesoDatos();

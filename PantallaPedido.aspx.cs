@@ -27,20 +27,20 @@ namespace PropuestaResto
                 Session["PedidoTemporal"] = null;
             }
 
-            if (!IsPostBack)
+            if (!IsPostBack) 
             {
                 CargarInsumos();
 
                 PedidoNegocio negocio = new PedidoNegocio();
                 Pedido pedidoActual = negocio.ObtenerPedidoActivoPorMesa(IdMesa);
 
-                if (pedidoActual != null)
+                if (pedidoActual != null) // si no es nulo, cargo el pedido 
                 {
-                    Session["IdPedidoActual"] = pedidoActual.IdPedido;
+                    Session["IdPedidoActual"] = pedidoActual.IdPedido; // asigno el idpedido actual 
 
-                    if (Session["PedidoTemporal"] == null || ((List<Insumo>)Session["PedidoTemporal"]).Count == 0)
+                    if (Session["PedidoTemporal"] == null || ((List<Insumo>)Session["PedidoTemporal"]).Count == 0) // si es nulo y la lista tiene 0 registros
                     {
-                        Session["PedidoTemporal"] = negocio.ObtenerDetallePedidoPorId(pedidoActual.IdPedido);
+                        Session["PedidoTemporal"] = negocio.ObtenerDetallePedidoPorId(pedidoActual.IdPedido); // cargo los insumos del pedido por el idpedido
                     }
                     idpedido = pedidoActual.IdPedido;
                 }
@@ -142,12 +142,17 @@ namespace PropuestaResto
             
             
 
-            // ELIMINO LOGICAMENTE PARA ASEGURARME QUE NO VUELVA A APARECER EL PDIDO, VINCU
+            // ELIMINO LOGICAMENTE PARA ASEGURARME QUE NO VUELVA A APARECER EL PDIDO, VINCUlando Idinsumo y idpedido
+
             PedidoNegocio negocio = new PedidoNegocio();
             /// traigo el idinsumo
             List<Insumo> pedidoTemporal = (List<Insumo>)Session["PedidoTemporal"];
             Insumo insumoAEliminar = pedidoTemporal.Find(i => i.IdInsumo == idInsumo);
-         
+
+            //traigo el idpedido
+            int idpedido = (int)Session["IdPedidoActual"];
+
+
             if (insumoAEliminar != null)
             {
                 pedidoTemporal.Remove(insumoAEliminar); // nota: remove elimina el insumo elegido de sesion
@@ -157,7 +162,7 @@ namespace PropuestaResto
             }
             else
             {
-            negocio.EliminarInsumoDelPedido(idInsumo,); // Elimino logicamente para que no aparezca luego en la lista temporal o la lista normal
+            negocio.EliminarInsumoDelPedido(idInsumo, idpedido); // Elimino logicamente para que no aparezca luego en la lista temporal o la lista normal
 
             }
 
@@ -169,6 +174,7 @@ namespace PropuestaResto
             PedidoNegocio pedidoNegocio = new PedidoNegocio();
             List<Insumo> pedidoTemporal = (List<Insumo>)Session["PedidoTemporal"];
             MesaNegocio mesaNegocio = new MesaNegocio();
+
 
             if (Session["IdPedidoActual"] == null)
             {
@@ -212,9 +218,15 @@ namespace PropuestaResto
                 PedidoNegocio negocio = new PedidoNegocio();
                 MesaNegocio mesaNegocio = new MesaNegocio();
 
+                // finalizo el pedido seteo finalizado igual a 1 
                 negocio.FinalizarPedido(idPedido);
 
-            
+
+                //limpio todos los insumos de detallepedido para asegurar de que no se traigan registros.
+                negocio.EliminarTodosInsumosDelPedido(idpedido);
+
+
+                // pongo en false la mesa ya que no tiene pedidos.
                 mesaNegocio.ActualizarMesa(IdMesa, false);
 
                 // Limpiar la sesión
