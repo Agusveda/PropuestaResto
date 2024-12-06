@@ -76,15 +76,16 @@ namespace PropuestaResto
         {
             Button btn = (Button)sender;
             int idInsumo = int.Parse(btn.CommandArgument);
-
+            PedidoNegocio negociopedido = new PedidoNegocio();
             InsumoNegocio negocio = new InsumoNegocio();
             Insumo insu = negocio.ListarConSp().Find(i => i.IdInsumo == idInsumo); // nota: busca en la lista. 
 
             if (insu != null)
             {
                 List<Insumo> pedidoTemporal = (List<Insumo>)Session["PedidoTemporal"];
-
                 Insumo insumoExistente = pedidoTemporal.Find(i => i.IdInsumo == idInsumo);
+                    negociopedido.RestarCantidadEnInsumos(insu.IdInsumo, 1);
+
                 if (insumoExistente != null)
                 {
           
@@ -99,6 +100,7 @@ namespace PropuestaResto
 
                 Session["PedidoTemporal"] = pedidoTemporal;
                 CargarDetallePedido();
+                CargarInsumos();
             }
         }
 
@@ -106,68 +108,81 @@ namespace PropuestaResto
         {
             Button btn = (Button)sender;
             int idInsumo = int.Parse(btn.CommandArgument);
+            PedidoNegocio negociopedido = new PedidoNegocio();
 
             List<Insumo> pedidoTemporal = (List<Insumo>)Session["PedidoTemporal"];
             Insumo insumo = pedidoTemporal.Find(i => i.IdInsumo == idInsumo);
             if (insumo != null)
             {
                 insumo.Cantidad += 1;
+                negociopedido.RestarCantidadEnInsumos(idInsumo, 1);
                 CargarDetallePedido();
+                CargarInsumos();
             }
         }
 
         protected void btnDisminuir_Click(object sender, EventArgs e)
         {
+            // declaracion de variables
+            PedidoNegocio negociopedido = new PedidoNegocio();
+
             Button btn = (Button)sender;
             int idInsumo = int.Parse(btn.CommandArgument);
-
+            PedidoNegocio negocio = new PedidoNegocio();
             List<Insumo> pedidoTemporal = (List<Insumo>)Session["PedidoTemporal"];
             Insumo insumo = pedidoTemporal.Find(i => i.IdInsumo == idInsumo);
+
+
+            // validaciones
+
             if (insumo != null)
             {
-                insumo.Cantidad -= 1;
+                insumo.Cantidad -= 1; // rest a la cantida 1
+
                 if (insumo.Cantidad <= 0)
                 {
-                    pedidoTemporal.Remove(insumo); // Eliminar si la cantidad es 0
+
+                    int idpedido = (int)Session["IdPedidoActual"];
+                    negocio.EliminarInsumoDelPedido(idInsumo, idpedido);
+                    pedidoTemporal.Remove(insumo); // Eliminar del list si la cantidad es 0
+                    negocio.SumarCantidadEnInsumos(idInsumo, insumo.Cantidad);
                 }
-                CargarDetallePedido();
+
+                negociopedido.SumarCantidadEnInsumos(insumo.IdInsumo, 1);
+                CargarInsumos();
+                CargarDetallePedido(); //cargo de nuevo el detall del opedido
             }
         }
 
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
+            // declaración de variables
             Button btn = (Button)sender;
             int idInsumo = int.Parse(btn.CommandArgument);
-            
-            
-
-            // ELIMINO LOGICAMENTE PARA ASEGURARME QUE NO VUELVA A APARECER EL PDIDO, VINCUlando Idinsumo y idpedido
-
             PedidoNegocio negocio = new PedidoNegocio();
-            /// traigo el idinsumo
             List<Insumo> pedidoTemporal = (List<Insumo>)Session["PedidoTemporal"];
             Insumo insumoAEliminar = pedidoTemporal.Find(i => i.IdInsumo == idInsumo);
 
-            //traigo el idpedido
-            int idpedido = (int)Session["IdPedidoActual"];
-
-
+            
             if (insumoAEliminar != null)
             {
-                pedidoTemporal.Remove(insumoAEliminar); // nota: remove elimina el insumo elegido de sesion
-                Session["PedidoTemporal"] = pedidoTemporal;
+
+                pedidoTemporal.Remove(insumoAEliminar); // Elimina del pedido temporal
+                Session["PedidoTemporal"] = pedidoTemporal; 
+                negocio.SumarCantidadEnInsumos(insumoAEliminar.IdInsumo, insumoAEliminar.Cantidad);
+
+            // si el pedido ya fue creado ahi si puedo eliminar de bd, sino, solo interactua con el temporal (sin idpedido, sin iddetale)
+                if (Session["IdPedidoActual"] != null)
+                {
+                    int idPedido = (int)Session["IdPedidoActual"];
+                    negocio.EliminarInsumoDelPedido(idInsumo, idPedido); // Elimina de la base de datos
+                }
                 CargarDetallePedido();
-                negocio.EliminarInsumoDelPedido(idInsumo, idpedido);
+                CargarInsumos();
             }
-            else
-            {
-            negocio.EliminarInsumoDelPedido(idInsumo, idpedido); // Elimino logicamente para que no aparezca luego en la lista temporal o la lista normal
-
-            }
-
-
         }
+
 
         protected void btnConfirmarPedido_Click(object sender, EventArgs e)
         {

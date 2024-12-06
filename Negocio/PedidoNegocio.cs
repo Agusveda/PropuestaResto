@@ -272,6 +272,44 @@ namespace Negocio
                 datos.cerrarConexion();
             }
         }
+        public void RestarCantidadEnInsumos(int idinsumo, int cantidad)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearProcedimiento("RestarCantidadEnInsumos");
+                datos.setearParametros("@IdInsumo", idinsumo);
+                datos.setearParametros("@cantidad", cantidad);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+        public void SumarCantidadEnInsumos(int idinsumo, int cantidad)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearProcedimiento("SumarCantidadEnInsumos");
+                datos.setearParametros("@IdInsumo", idinsumo);
+                datos.setearParametros("@cantidad", cantidad);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
         public void EliminarInsumoDelPedido(int idinsumo, int idPedido)
         {
             AccesoDatos datos = new AccesoDatos();
