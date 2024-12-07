@@ -82,6 +82,11 @@ namespace PropuestaResto
 
             if (insu != null)
             {
+                if (insu.Cantidad <= 0)
+                {
+
+                    return;
+                }
                 List<Insumo> pedidoTemporal = (List<Insumo>)Session["PedidoTemporal"];
                 Insumo insumoExistente = pedidoTemporal.Find(i => i.IdInsumo == idInsumo);
                     negociopedido.RestarCantidadEnInsumos(insu.IdInsumo, 1);
@@ -109,12 +114,19 @@ namespace PropuestaResto
             Button btn = (Button)sender;
             int idInsumo = int.Parse(btn.CommandArgument);
             PedidoNegocio negociopedido = new PedidoNegocio();
-
+            InsumoNegocio negocio = new InsumoNegocio();
+            Insumo insu = negocio.ListarConSp().Find(i => i.IdInsumo == idInsumo);
             List<Insumo> pedidoTemporal = (List<Insumo>)Session["PedidoTemporal"];
             Insumo insumo = pedidoTemporal.Find(i => i.IdInsumo == idInsumo);
+
             if (insumo != null)
             {
-                insumo.Cantidad += 1;
+                if (insu.Cantidad <= 0) 
+                {
+                    return;
+                }
+
+                    insumo.Cantidad += 1;
                 negociopedido.RestarCantidadEnInsumos(idInsumo, 1);
                 CargarDetallePedido();
                 CargarInsumos();
@@ -142,10 +154,16 @@ namespace PropuestaResto
                 if (insumo.Cantidad <= 0)
                 {
 
-                    int idpedido = (int)Session["IdPedidoActual"];
-                    negocio.EliminarInsumoDelPedido(idInsumo, idpedido);
                     pedidoTemporal.Remove(insumo); // Eliminar del list si la cantidad es 0
                     negocio.SumarCantidadEnInsumos(idInsumo, insumo.Cantidad);
+
+
+                    if (Session["IdPedidoActual"] != null)
+                    {
+                    int idpedido = (int)Session["IdPedidoActual"];
+                    negocio.EliminarInsumoDelPedido(idInsumo, idpedido);
+
+                    }
                 }
 
                 negociopedido.SumarCantidadEnInsumos(insumo.IdInsumo, 1);
