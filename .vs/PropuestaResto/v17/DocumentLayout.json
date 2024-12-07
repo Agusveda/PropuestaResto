@@ -3,20 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|solutionrelative:default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|c:\\users\\usuario\\documents\\github\\repositorios\\propuestaresto\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|solutionrelative:login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|c:\\users\\usuario\\documents\\github\\repositorios\\propuestaresto\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|solutionrelative:login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{583F4CE9-B029-4E3C-BE30-4D9ACA36CAFF}|Negocio\\Negocio.csproj|c:\\users\\usuario\\documents\\github\\repositorios\\propuestaresto\\negocio\\usuarionegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{583F4CE9-B029-4E3C-BE30-4D9ACA36CAFF}|Negocio\\Negocio.csproj|solutionrelative:negocio\\usuarionegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20F24E92-3A41-4926-9543-C79219390B47}|Dominio\\Dominio.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\dominio\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20F24E92-3A41-4926-9543-C79219390B47}|Dominio\\Dominio.csproj|solutionrelative:dominio\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\pantallapedido.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|solutionrelative:pantallapedido.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{583F4CE9-B029-4E3C-BE30-4D9ACA36CAFF}|Negocio\\Negocio.csproj|c:\\users\\usuario\\documents\\github\\repositorios\\propuestaresto\\negocio\\pedidonegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{583F4CE9-B029-4E3C-BE30-4D9ACA36CAFF}|Negocio\\Negocio.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\negocio\\pedidonegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{583F4CE9-B029-4E3C-BE30-4D9ACA36CAFF}|Negocio\\Negocio.csproj|solutionrelative:negocio\\pedidonegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{20F24E92-3A41-4926-9543-C79219390B47}|Dominio\\Dominio.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\dominio\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20F24E92-3A41-4926-9543-C79219390B47}|Dominio\\Dominio.csproj|solutionrelative:dominio\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|c:\\users\\usuario\\documents\\github\\repositorios\\propuestaresto\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|solutionrelative:default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{583F4CE9-B029-4E3C-BE30-4D9ACA36CAFF}|Negocio\\Negocio.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\negocio\\mesanegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -58,17 +70,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "PantallaPedido.aspx.cs",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\PantallaPedido.aspx.cs",
               "RelativeDocumentMoniker": "PantallaPedido.aspx.cs",
               "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\PantallaPedido.aspx.cs",
               "RelativeToolTip": "PantallaPedido.aspx.cs",
-              "ViewState": "AQIAAIQAAAAAAAAAAAAowHQAAAA4AAAA",
+              "ViewState": "AQIAAOwAAAAAAAAAAAAAwAwBAAA4AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-01T20:51:18.982Z",
               "IsPinned": true,
@@ -76,7 +88,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "Default.aspx",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\Default.aspx",
               "RelativeDocumentMoniker": "Default.aspx",
@@ -90,7 +102,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 1,
+              "Title": "Login.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\Login.aspx.cs",
+              "RelativeDocumentMoniker": "Login.aspx.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\Login.aspx.cs",
+              "RelativeToolTip": "Login.aspx.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAtwBIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-07T18:37:03.897Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Login.aspx",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\Login.aspx",
+              "RelativeDocumentMoniker": "Login.aspx",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\Login.aspx",
+              "RelativeToolTip": "Login.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-12-07T18:34:20.926Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UsuarioNegocio.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\Negocio\\UsuarioNegocio.cs",
+              "RelativeDocumentMoniker": "Negocio\\UsuarioNegocio.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\Negocio\\UsuarioNegocio.cs",
+              "RelativeToolTip": "Negocio\\UsuarioNegocio.cs",
+              "ViewState": "AQIAAJsAAAAAAAAAAAAcwKwAAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-07T18:16:07.915Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "AccesoDatos.cs",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\Negocio\\AccesoDatos.cs",
               "RelativeDocumentMoniker": "Negocio\\AccesoDatos.cs",
@@ -102,7 +153,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "Mesa.cs",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\Dominio\\Mesa.cs",
               "RelativeDocumentMoniker": "Dominio\\Mesa.cs",
@@ -114,7 +165,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "DetallePedido.cs",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\Dominio\\DetallePedido.cs",
               "RelativeDocumentMoniker": "Dominio\\DetallePedido.cs",
@@ -126,7 +177,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "Pedido.cs",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\Dominio\\Pedido.cs",
               "RelativeDocumentMoniker": "Dominio\\Pedido.cs",
@@ -144,26 +195,27 @@
               "RelativeDocumentMoniker": "Dominio\\Usuario.cs",
               "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\Dominio\\Usuario.cs",
               "RelativeToolTip": "Dominio\\Usuario.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T21:11:22.172Z"
+              "WhenOpened": "2024-12-01T21:11:22.172Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "PedidoNegocio.cs",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\Negocio\\PedidoNegocio.cs",
               "RelativeDocumentMoniker": "Negocio\\PedidoNegocio.cs",
               "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\Negocio\\PedidoNegocio.cs",
               "RelativeToolTip": "Negocio\\PedidoNegocio.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAwAAAAnAAAA",
+              "ViewState": "AQIAACsAAAAAAAAAAAApwHYAAABHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-01T21:11:05.819Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "PantallaMesas.aspx.cs",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\PantallaMesas.aspx.cs",
               "RelativeDocumentMoniker": "PantallaMesas.aspx.cs",
@@ -175,7 +227,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "PantallaMesas.aspx",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\PantallaMesas.aspx",
               "RelativeDocumentMoniker": "PantallaMesas.aspx",
@@ -187,7 +239,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "InsumoNegocio.cs",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\Negocio\\InsumoNegocio.cs",
               "RelativeDocumentMoniker": "Negocio\\InsumoNegocio.cs",
@@ -199,7 +251,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "MesaNegocio.cs",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\Negocio\\MesaNegocio.cs",
               "RelativeDocumentMoniker": "Negocio\\MesaNegocio.cs",

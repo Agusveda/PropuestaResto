@@ -154,6 +154,38 @@ namespace Negocio
             }
         }
 
+        public bool loguear(Usuario usuario)
+        {
+
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+
+                datos.setearProcedimiento("VerificarUsuario");
+                datos.setearParametros("@NombreUsuario", usuario.NombreUsuario);
+                datos.setearParametros("@Password", usuario.Password);
+
+
+                datos.ejecutarLectura();
+                while (datos.Lector.Read())
+                {
+                    usuario.IdUsuario = (int) datos.Lector["IdUsuario"];
+                    usuario.EsAdmin = (bool) datos.Lector["EsAdmin"];
+
+
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
+
 
     }
 
