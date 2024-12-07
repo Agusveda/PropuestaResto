@@ -14,6 +14,12 @@ namespace PropuestaResto
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (!( Session["usuario"] != null && ((Dominio.Usuario)Session["usuario"]).EsAdmin == true))
+            {
+                Session.Add("error", "No tenes permisos para ingresar a esta pantalla, debes ser admin");
+                Response.Redirect("Error.aspx", false);
+            }
         }
 
         //                                      ABM DE INSUMOSSSSS 

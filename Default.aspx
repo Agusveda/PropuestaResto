@@ -15,12 +15,18 @@
     <div class="col">
               <asp:Button Text="Mesas" CssClass="btn btn-primary" runat="server" id="btnMesas" OnClick="btnMesas_Click" />
 
+
     </div>
+
+      <%if (Session["usuario"] !=null && ((Dominio.Usuario)Session["usuario"]).EsAdmin == true)
+          {
+
+          %>
     <div class="col">
               <asp:Button Text="Admin" CssClass="btn btn-primary" runat="server" id="btnAdmin" OnClick="btnAdmin_Click" />
 
     </div>
-    
+    <%} %>
   </div>
 </div>
 
