@@ -421,5 +421,10 @@ namespace PropuestaResto
             CargarMesasDisponibles();
 
         }
+
+        protected void btnReportes_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

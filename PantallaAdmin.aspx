@@ -21,6 +21,11 @@
         <div class="col">
             <asp:Button Text="ASIGNACION DE MESAS (a los meseros)" class="btn btn-outline-success" runat="server" ID="btnAsignacionMesa" OnClick="btnAsignacionMesa_Click" />
         </div>
+         <div class="col">
+     <asp:Button Text="REPORTES" class="btn btn-outline-success" runat="server" ID="btnReportes" OnClick="btnReportes_Click" />
+ </div>
+
+
     </div>
 
 
@@ -100,15 +105,9 @@
 
 
 
-
-
-
-
-
-
-
-
     <%--                                           FIN  VISTA ABML INSUMOS                                 --%>
+
+
 
 
 

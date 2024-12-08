@@ -74,6 +74,7 @@
     <Content Include="PantallaAdmin.aspx" />
     <Content Include="PantallaMesas.aspx" />
     <Content Include="PantallaPedido.aspx" />
+    <Content Include="PantallaReportes.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -128,6 +129,13 @@
     </Compile>
     <Compile Include="PantallaPedido.aspx.designer.cs">
       <DependentUpon>PantallaPedido.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaReportes.aspx.cs">
+      <DependentUpon>PantallaReportes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PantallaReportes.aspx.designer.cs">
+      <DependentUpon>PantallaReportes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
