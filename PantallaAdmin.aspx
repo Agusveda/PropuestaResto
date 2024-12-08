@@ -212,6 +212,7 @@
         <h4>Meseros disponibles</h4>
         <asp:DropDownList runat="server" ID="ddlMeseros" CssClass="btn btn-outline-dark ddropdown-toggle"></asp:DropDownList>
     </div>
+            <asp:Button  runat="server" ID="btnConfirmarAsignarMesero" OnClick="btnConfirmarAsignarMesero_Click" CssClass="btn btn-primary" Text="Confirmar Asignacion"/>
 
 </div>
 

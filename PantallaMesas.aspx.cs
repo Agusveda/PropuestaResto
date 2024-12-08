@@ -1,4 +1,5 @@
-﻿using Negocio;
+﻿using Dominio;
+using Negocio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,10 +20,13 @@ namespace PropuestaResto
         }
 
         public void CargarMesa() 
-        { 
-            
+        {
+
+            Usuario user = (Usuario)Session["usuario"];
+
+
             MesaNegocio negocio = new MesaNegocio();
-            rptMesas.DataSource = negocio.listarMesas();
+            rptMesas.DataSource = negocio.ListarmesasPorMesero(user.IdUsuario);
             rptMesas.DataBind();
 
         

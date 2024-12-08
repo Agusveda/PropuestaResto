@@ -193,7 +193,7 @@ namespace PropuestaResto
 
 
 
-        //                                      ABM DE MESEROS
+        //                                      ABM DE MESEROS/USUARIOS
 
         protected void btnAltaUsuario_Click(object sender, EventArgs e)
         {
@@ -209,10 +209,6 @@ namespace PropuestaResto
 
 
 
-
-        }
-        protected void btnAgregarInsumo_Click(object sender, EventArgs e)
-        {
 
         }
         protected void btnModificarUsuario_Click(object sender, EventArgs e)
@@ -362,7 +358,7 @@ namespace PropuestaResto
 
 
         }
-        //                                      FIN DE ABM DE INSUMOS
+        //                                      FIN DE ABM DE MESEROS/USUARIOS
 
 
 
@@ -372,7 +368,13 @@ namespace PropuestaResto
         {
             CargarMesasDisponibles();
 
-         
+            ABMINSUMOS.Visible = false;
+            divAltaInsumo.Visible = false;
+            btnAceptarModificarInsumo.Visible = false;
+            ABMUSUARIOS.Visible = false;
+           
+
+
 
         }
 
@@ -389,34 +391,34 @@ namespace PropuestaResto
             repMesasDisponibles.DataSource = mesas;
             repMesasDisponibles.DataBind();
         }
-        protected void repMesasDisponibles_ItemDataBound(object sender, RepeaterItemEventArgs e)
-        {
-            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
-            {
-                DropDownList ddlMeseros = (DropDownList)e.Item.FindControl("ddlMeseros");
-                List<Usuario> meserosDisponibles = (List<Usuario>)Session["MeserosDisponibles"];
-
-                if (ddlMeseros != null)
-                {
-                    ddlMeseros.DataSource = meserosDisponibles;
-                    ddlMeseros.DataTextField = "Nombre";
-                    ddlMeseros.DataValueField = "IdMesero";
-                    ddlMeseros.DataBind();
-                }
-            }
-        }
-
+       
         protected void btnAsignarMeseroMesa_Click(object sender, EventArgs e)
         {
             int idMesa = int.Parse(((Button)sender).CommandArgument);
 
             txtIdMesa.Text = idMesa.ToString();
-
+            
             divAsignacionMesero.Visible = true;
             UsuarioNegocio negocio = new UsuarioNegocio();
             ddlMeseros.DataSource = negocio.ListarUsuariosMeseros();
+            ddlMeseros.DataTextField = "Nombre";
+            ddlMeseros.DataValueField = "IdUsuario";
             ddlMeseros.DataBind();
 
+
+        }
+
+        protected void btnConfirmarAsignarMesero_Click(object sender, EventArgs e)
+        {
+
+            MesaNegocio negocio = new MesaNegocio();
+
+            int idMesero = int.Parse(ddlMeseros.SelectedItem.Value);
+            int idmesa = int.Parse(txtIdMesa.Text);
+
+            negocio.ActualizarMeseroAsignado(idmesa, idMesero);
+            divAsignacionMesero.Visible = false;
+            CargarMesasDisponibles();
 
         }
     }
