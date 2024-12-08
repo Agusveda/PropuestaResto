@@ -31,7 +31,7 @@ namespace Negocio
                     aux.IdMesa = (int)datos.Lector["IdMesa"];
                     aux.Disponible = (bool)datos.Lector["Disponible"];
                     aux.Asignada = (bool)datos.Lector["Asignada"];
-
+                    aux.idMeseroAsignado = (int)datos.Lector["idMeseroAsignado"];
 
                     lista.Add(aux);
 

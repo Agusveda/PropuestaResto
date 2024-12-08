@@ -27,7 +27,7 @@ namespace PropuestaResto
         {
 
             CargarInsumos();
-        }
+        } // carga vista de insumos
         protected void btnAceptarAgregarInsumo_Click(object sender, EventArgs e)
         {
    
@@ -54,7 +54,7 @@ namespace PropuestaResto
             }
            
 
-        }
+        } // confirmacion de nuevo insumo
         protected void btnModificar_Click(object sender, EventArgs e)
         {
 
@@ -87,7 +87,7 @@ namespace PropuestaResto
 
 
 
-        }
+        } // para modificar un insumo
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
 
@@ -108,7 +108,7 @@ namespace PropuestaResto
                 throw ex;
             }
 
-        }
+        } // baja logica insumo
         protected void btnAltaInsumo_Click(object sender, EventArgs e)
         {
 
@@ -131,7 +131,7 @@ namespace PropuestaResto
             btnAceptarModificarInsumo.Visible = false;
 
 
-        }
+        } // muestro el formulario de alta de insumo
         protected void btnAceptarModificarInsumo_Click(object sender, EventArgs e)
         {
 
@@ -161,8 +161,8 @@ namespace PropuestaResto
             }
 
 
-        }
-        private void CargarInsumos()
+        } // confirmo la modificacion del insumo
+        private void CargarInsumos() 
         {
             // lista actuales
             /// configuracion si estamos agregando 
@@ -182,10 +182,10 @@ namespace PropuestaResto
             divAltaInsumo.Visible = false;
             btnAceptarModificarInsumo.Visible = false;
             ABMUSUARIOS.Visible = false;
+            divASIGNACIONMESA.Visible = false;
 
 
-            /// configuracion si estamos modificando
-        }
+        } // carga los insumos actuales.
 
         //                                      FIN DE ABM DE INSUMOS
 
@@ -211,12 +211,10 @@ namespace PropuestaResto
 
 
         }
-
         protected void btnAgregarInsumo_Click(object sender, EventArgs e)
         {
 
         }
-
         protected void btnModificarUsuario_Click(object sender, EventArgs e)
         {
             int id = int.Parse(((Button)sender).CommandArgument);
@@ -249,16 +247,12 @@ namespace PropuestaResto
 
 
         }
-
         protected void btnAbmUsuarios_Click(object sender, EventArgs e)
         {
 
             CargarUsuario();
 
         }
-
-      
-
         protected void btnAceptarModificarUsuario_Click(object sender, EventArgs e)
         {
             try
@@ -296,7 +290,6 @@ namespace PropuestaResto
             }
 
         }
-
         protected void btnEliminarUsuario_Click(object sender, EventArgs e)
         {
 
@@ -327,14 +320,13 @@ namespace PropuestaResto
             btnAceptarModificarUsuario.Visible = false;
             UsuarioNegocio negocio = new UsuarioNegocio();
             ABMINSUMOS.Visible = false;
+            divASIGNACIONMESA.Visible = false;
 
 
 
             repUsuarios.DataSource = negocio.ListarUsuarios();
             repUsuarios.DataBind();
         }
-
-
         protected void btnAceptarAgregarUsuario_Click(object sender, EventArgs e)
         {
             try
@@ -367,6 +359,63 @@ namespace PropuestaResto
 
                 throw ex;
             }
+
+
+        }
+        //                                      FIN DE ABM DE INSUMOS
+
+
+
+
+        //                                      ASIGNACION DE MESA
+        protected void btnAsignacionMesa_Click(object sender, EventArgs e)
+        {
+            CargarMesasDisponibles();
+
+         
+
+        }
+
+        private void CargarMesasDisponibles()
+        {
+            divASIGNACIONMESA.Visible = true;
+            MesaNegocio mesaNegocio = new MesaNegocio();
+            List<Mesa> mesas = mesaNegocio.listarMesas();
+
+            // Guardar meseros disponibles en una sesión para acceso rápido en cada fila
+            UsuarioNegocio usuNegocio= new UsuarioNegocio();
+            Session["MeserosDisponibles"] = usuNegocio.ListarUsuariosMeseros();
+
+            repMesasDisponibles.DataSource = mesas;
+            repMesasDisponibles.DataBind();
+        }
+        protected void repMesasDisponibles_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+            {
+                DropDownList ddlMeseros = (DropDownList)e.Item.FindControl("ddlMeseros");
+                List<Usuario> meserosDisponibles = (List<Usuario>)Session["MeserosDisponibles"];
+
+                if (ddlMeseros != null)
+                {
+                    ddlMeseros.DataSource = meserosDisponibles;
+                    ddlMeseros.DataTextField = "Nombre";
+                    ddlMeseros.DataValueField = "IdMesero";
+                    ddlMeseros.DataBind();
+                }
+            }
+        }
+
+        protected void btnAsignarMeseroMesa_Click(object sender, EventArgs e)
+        {
+            int idMesa = int.Parse(((Button)sender).CommandArgument);
+
+            txtIdMesa.Text = idMesa.ToString();
+
+            divAsignacionMesero.Visible = true;
+            UsuarioNegocio negocio = new UsuarioNegocio();
+            ddlMeseros.DataSource = negocio.ListarUsuariosMeseros();
+            ddlMeseros.DataBind();
 
 
         }

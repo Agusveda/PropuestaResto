@@ -18,6 +18,9 @@
             <asp:Button Text="ABML DE USUARIOS/MESEROS" class="btn btn-outline-success" runat="server" ID="btnAbmUsuarios" OnClick="btnAbmUsuarios_Click" />
         </div>
 
+        <div class="col">
+            <asp:Button Text="ASIGNACION DE MESAS (a los meseros)" class="btn btn-outline-success" runat="server" ID="btnAsignacionMesa" OnClick="btnAsignacionMesa_Click" />
+        </div>
     </div>
 
 
@@ -109,6 +112,8 @@
 
 
 
+
+
     <%--                                             VISTA ABML USUARIOS                                 --%>
 
 
@@ -188,5 +193,66 @@
 
     </div>
     <asp:TextBox runat="server" ID="txtIdUsuario" Visible="false"></asp:TextBox>
+
+
+
+
+
+    <%--                                             VISTA ASIGNACION DE MESA                             --%>
+
+
+    <div id="divASIGNACIONMESA" runat="server" visible="false">
+
+        <div id="divAsignacionMesero" visible="false" runat="server">
+
+    <div class="mb-3">
+        <label for="txtIdMesa" class="form-label">IdMesa:</label>
+        <asp:TextBox runat="server" ID="txtIdMesa" CssClass="form-control" Enabled="false"></asp:TextBox>
+    
+        <h4>Meseros disponibles</h4>
+        <asp:DropDownList runat="server" ID="ddlMeseros" CssClass="btn btn-outline-dark ddropdown-toggle"></asp:DropDownList>
+    </div>
+
+</div>
+
+        <asp:Repeater ID="repMesasDisponibles" runat="server">
+            <HeaderTemplate>
+                <table class="table table-striped">
+                    <tr>
+                        <th>Número de mesa</th>
+                        <th>Mesero Asignado a la mesa</th>
+                        <th>Acciones</th>
+                    </tr>
+            </HeaderTemplate>
+
+            <ItemTemplate>
+                <tr>
+                    <td><%# Eval("IdMesa") %></td>
+                    <td><%# Eval("IdMeseroAsignado") %></td>
+
+                    <td>
+                        <asp:Button runat="server" ID="btnAsignarMeseroMesa" CssClass="btn btn-primary" CommandArgument='<%#Eval("IdMesa") %>' CommandName="IdMesa" OnClick="btnAsignarMeseroMesa_Click" Text="Asignar" />
+                    </td>
+                </tr>
+            </ItemTemplate>
+            <FooterTemplate>
+                </table>
+            </FooterTemplate>
+        </asp:Repeater>
+
+        
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
 
 </asp:Content>

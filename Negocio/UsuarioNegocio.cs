@@ -42,6 +42,40 @@ namespace Negocio
             }
 
         }
+        public List<Usuario> ListarUsuariosMeseros()
+        {
+            List<Usuario> lista = new List<Usuario>();
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearProcedimiento("ListarUsuariosMeseros");
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    Usuario aux = new Usuario();
+
+                    aux.IdUsuario = (int)datos.Lector["IdUsuario"];
+                    aux.NombreUsuario = (string)datos.Lector["NombreUsuario"];
+                    aux.Password = (string)datos.Lector["Password"];
+                    aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.Apellido = (string)datos.Lector["Apellido"];
+                    aux.FechaIngreso = (DateTime)datos.Lector["FechaIngreso"];
+                    aux.EsAdmin = (bool)datos.Lector["EsAdmin"];
+
+                    lista.Add(aux);
+
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
+
         public void AgregarUsuario(Usuario nuevoUsuario)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -153,7 +187,6 @@ namespace Negocio
                 datos.cerrarConexion();
             }
         }
-
         public bool loguear(Usuario usuario)
         {
 
