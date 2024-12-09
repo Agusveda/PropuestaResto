@@ -8,7 +8,8 @@
 
     <asp:Label Text="" runat="server" ID="lbIdMesa"></asp:Label>
 
-
+        <asp:Label runat="server" Text="Filtar"> </asp:Label>
+    <asp:TextBox runat="server" id="txtFiltro" AutoPostBack="true" OnTextChanged="Filtro_TextChanged"></asp:TextBox>
         <asp:Repeater ID="repInsumos" runat="server">
         <HeaderTemplate>
             <table class="table table-striped">

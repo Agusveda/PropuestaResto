@@ -61,7 +61,8 @@ namespace PropuestaResto
         private void CargarInsumos()
         {
             InsumoNegocio negocio = new InsumoNegocio();
-            repInsumos.DataSource = negocio.ListarConSp();
+            Session.Add("ListaInsumos", negocio.ListarConSp());
+            repInsumos.DataSource = Session["ListaInsumos"];
             repInsumos.DataBind();
         }
 
@@ -270,6 +271,15 @@ namespace PropuestaResto
             }
         }
 
+        protected void Filtro_TextChanged(object sender, EventArgs e)
+        {
+
+            List<Insumo> lista = (List<Insumo>)Session["ListaInsumos"];
+
+            List<Insumo> listaFiltrada = lista.FindAll(x => x.Descripcion.ToUpper().Contains(txtFiltro.Text.ToUpper()));
+            repInsumos.DataSource = listaFiltrada;
+            repInsumos.DataBind();
+        }
     }
 }
 

@@ -3,36 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|c:\\users\\usuario\\documents\\github\\repositorios\\propuestaresto\\pantallareportes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|solutionrelative:pantallareportes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|c:\\users\\usuario\\documents\\github\\repositorios\\propuestaresto\\pantallaadmin.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|solutionrelative:pantallaadmin.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\pantallaadmin.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|solutionrelative:pantallaadmin.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|c:\\users\\usuario\\documents\\github\\repositorios\\propuestaresto\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|solutionrelative:login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\pantallamesas.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|solutionrelative:pantallamesas.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|c:\\users\\usuario\\documents\\github\\repositorios\\propuestaresto\\pantallapedido.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|solutionrelative:pantallapedido.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|solutionrelative:login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{583F4CE9-B029-4E3C-BE30-4D9ACA36CAFF}|Negocio\\Negocio.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\negocio\\mesanegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{583F4CE9-B029-4E3C-BE30-4D9ACA36CAFF}|Negocio\\Negocio.csproj|solutionrelative:negocio\\mesanegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\pantallamesas.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|solutionrelative:pantallamesas.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|c:\\users\\usuario\\documents\\github\\repositorios\\propuestaresto\\pantallapedido.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3206CE49-3956-428E-BE10-9013E6704C16}|PropuestaResto.csproj|solutionrelative:pantallapedido.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -47,69 +27,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PantallaReportes.aspx",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\PantallaReportes.aspx",
-              "RelativeDocumentMoniker": "PantallaReportes.aspx",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\PantallaReportes.aspx",
-              "RelativeToolTip": "PantallaReportes.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-12-08T23:18:07.786Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PantallaAdmin.aspx",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\PantallaAdmin.aspx",
-              "RelativeDocumentMoniker": "PantallaAdmin.aspx",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\PantallaAdmin.aspx",
-              "RelativeToolTip": "PantallaAdmin.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-12-08T23:04:41.23Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PantallaAdmin.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\PantallaAdmin.aspx.cs",
-              "RelativeDocumentMoniker": "PantallaAdmin.aspx.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\PantallaAdmin.aspx.cs",
-              "RelativeToolTip": "PantallaAdmin.aspx.cs",
-              "ViewState": "AQIAAIwBAAAAAAAAAAAiwKoBAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T18:16:13.88Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Login.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\Login.aspx.cs",
-              "RelativeDocumentMoniker": "Login.aspx.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\Login.aspx.cs",
-              "RelativeToolTip": "Login.aspx.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T18:16:01.81Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MesaNegocio.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\Negocio\\MesaNegocio.cs",
-              "RelativeDocumentMoniker": "Negocio\\MesaNegocio.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\Negocio\\MesaNegocio.cs",
-              "RelativeToolTip": "Negocio\\MesaNegocio.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAqwAwAAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T18:14:00.938Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "Login.aspx",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\Login.aspx",
               "RelativeDocumentMoniker": "Login.aspx",
@@ -122,27 +39,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PantallaMesas.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\PantallaMesas.aspx.cs",
-              "RelativeDocumentMoniker": "PantallaMesas.aspx.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\PantallaMesas.aspx.cs",
-              "RelativeToolTip": "PantallaMesas.aspx.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAAABAAAAAZAAAA",
+              "DocumentIndex": 2,
+              "Title": "PantallaPedido.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\PantallaPedido.aspx.cs",
+              "RelativeDocumentMoniker": "PantallaPedido.aspx.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\PantallaPedido.aspx.cs",
+              "RelativeToolTip": "PantallaPedido.aspx.cs",
+              "ViewState": "AQIAAAIBAAAAAAAAAAAAwBYBAABdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T18:13:26.151Z"
+              "WhenOpened": "2024-12-09T00:44:34.917Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "PantallaMesas.aspx",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\PantallaMesas.aspx",
-              "RelativeDocumentMoniker": "PantallaMesas.aspx",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\PantallaMesas.aspx",
-              "RelativeToolTip": "PantallaMesas.aspx",
+              "DocumentIndex": 1,
+              "Title": "PantallaPedido.aspx",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\PantallaPedido.aspx",
+              "RelativeDocumentMoniker": "PantallaPedido.aspx",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\repositorios\\PropuestaResto\\PantallaPedido.aspx",
+              "RelativeToolTip": "PantallaPedido.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-12-08T18:13:16.936Z"
+              "WhenOpened": "2024-12-09T00:37:41.255Z",
+              "EditorCaption": ""
             }
           ]
         }

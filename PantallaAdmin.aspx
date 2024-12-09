@@ -21,9 +21,9 @@
         <div class="col">
             <asp:Button Text="ASIGNACION DE MESAS (a los meseros)" class="btn btn-outline-success" runat="server" ID="btnAsignacionMesa" OnClick="btnAsignacionMesa_Click" />
         </div>
-         <div class="col">
-     <asp:Button Text="REPORTES" class="btn btn-outline-success" runat="server" ID="btnReportes" OnClick="btnReportes_Click" />
- </div>
+        <div class="col">
+            <asp:Button Text="REPORTES" class="btn btn-outline-success" runat="server" ID="btnReportes" OnClick="btnReportes_Click" />
+        </div>
 
 
     </div>
@@ -204,16 +204,16 @@
 
         <div id="divAsignacionMesero" visible="false" runat="server">
 
-    <div class="mb-3">
-        <label for="txtIdMesa" class="form-label">IdMesa:</label>
-        <asp:TextBox runat="server" ID="txtIdMesa" CssClass="form-control" Enabled="false"></asp:TextBox>
-    
-        <h4>Meseros disponibles</h4>
-        <asp:DropDownList runat="server" ID="ddlMeseros" CssClass="btn btn-outline-dark ddropdown-toggle"></asp:DropDownList>
-    </div>
-            <asp:Button  runat="server" ID="btnConfirmarAsignarMesero" OnClick="btnConfirmarAsignarMesero_Click" CssClass="btn btn-primary" Text="Confirmar Asignacion"/>
+            <div class="mb-3">
+                <label for="txtIdMesa" class="form-label">IdMesa:</label>
+                <asp:TextBox runat="server" ID="txtIdMesa" CssClass="form-control" Enabled="false"></asp:TextBox>
 
-</div>
+                <h4>Meseros disponibles</h4>
+                <asp:DropDownList runat="server" ID="ddlMeseros" CssClass="btn btn-outline-dark ddropdown-toggle"></asp:DropDownList>
+            </div>
+            <asp:Button runat="server" ID="btnConfirmarAsignarMesero" OnClick="btnConfirmarAsignarMesero_Click" CssClass="btn btn-primary" Text="Confirmar Asignacion" />
+
+        </div>
 
         <asp:Repeater ID="repMesasDisponibles" runat="server">
             <HeaderTemplate>
@@ -240,7 +240,7 @@
             </FooterTemplate>
         </asp:Repeater>
 
-        
+
 
 
 
