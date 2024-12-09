@@ -11,7 +11,7 @@
         </div>
         <div class="mb-3">
             <label class="form-label">Password </label>
-            <asp:TextBox runat="server" ID="txtPassword" placeholder="*****"></asp:TextBox>
+            <asp:TextBox runat="server" ID="txtPassword" TextMode="Password"></asp:TextBox>
         </div>
 
         <asp:Button runat="server" Text="Ingresar" ID="btnIngresar" OnClick="btnIngresar_Click" />
