@@ -256,8 +256,6 @@ namespace PropuestaResto
                 negocio.FinalizarPedido(idPedido);
 
 
-                //limpio todos los insumos de detallepedido para asegurar de que no se traigan registros.
-                negocio.EliminarTodosInsumosDelPedido(idpedido);
 
 
                 // pongo en false la mesa ya que no tiene pedidos.
@@ -266,8 +264,10 @@ namespace PropuestaResto
                 // Limpiar la sesión
                 Session["IdPedidoActual"] = null;
                 Session["PedidoTemporal"] = null;
+                Session.Add("IdPedidoFinal", idPedido);
 
-                Response.Redirect("PantallaMesas.aspx");
+
+                Response.Redirect("PantallaFinalizarPedido.aspx");
             }
         }
 

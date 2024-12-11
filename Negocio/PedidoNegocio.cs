@@ -376,7 +376,41 @@ namespace Negocio
             }
         }
 
+        public List<PedidoFinalizado> ObtenerPedidoCompletoPorIdPedido(int IdPedido)
+        {
+            List<PedidoFinalizado> lista = new List<PedidoFinalizado>();
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearProcedimiento("ObtenerPedidoCompletoPorIdPedido");
+                datos.setearParametros("@IdPedido", IdPedido);
+                datos.ejecutarLectura();
 
+                while (datos.Lector.Read())
+                {
+                    PedidoFinalizado pedidoaux = new PedidoFinalizado();
+
+
+                    pedidoaux.idPedido = (int)datos.Lector["IdPedido"];
+                    pedidoaux.idDetallePedido = (int)datos.Lector["IdDetallePedido"];
+                    pedidoaux.IdInsumo = (int)datos.Lector["IdInsumo"];
+                    pedidoaux.Descripcion = (string)datos.Lector["Descripcion"];
+                    pedidoaux.cantidad = (int)datos.Lector["Cantidad"];
+                    pedidoaux.precioInsumo = (decimal)datos.Lector["PrecioInsumo"];
+                    pedidoaux.FechaHora = (DateTime)datos.Lector["FechaHora"];
+                    pedidoaux.PrecioTotal = (decimal)datos.Lector["PrecioTotal"];
+
+
+
+                    lista.Add(pedidoaux);
+                }
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+            return lista;
+        }
 
     }
 

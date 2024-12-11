@@ -25,6 +25,17 @@ namespace Dominio
         public decimal Precio { get; set; }
         public DateTime FechaHora { get; set; }
     }
+    public class PedidoFinalizado
+    {
+        public int idPedido { get; set; }
+        public int idDetallePedido { get; set; }
+        public int IdInsumo { get; set; }
+        public string Descripcion { get; set; }
+        public int cantidad { get; set; }
+        public decimal precioInsumo{ get; set; }
+        public DateTime FechaHora { get; set; }
+        public decimal PrecioTotal { get; set; }
+    }
 
 
 }
