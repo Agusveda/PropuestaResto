@@ -208,14 +208,14 @@ namespace PropuestaResto
             PedidoNegocio pedidoNegocio = new PedidoNegocio();
             List<Insumo> pedidoTemporal = (List<Insumo>)Session["PedidoTemporal"];
             MesaNegocio mesaNegocio = new MesaNegocio();
-
+            Usuario user = (Usuario)Session["usuario"];
 
             if (Session["IdPedidoActual"] == null)
             {
                 Pedido nuevoPedido = new Pedido
                 {
                     IdMesa = IdMesa,
-                    IdUsuario = 1,
+                    IdUsuario = user.IdUsuario,
                     Precio = pedidoTemporal.Sum(i => i.Precio * i.Cantidad),
                     Finalizado = false
                 };

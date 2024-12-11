@@ -17,4 +17,14 @@ namespace Dominio
 
     }
 
+    public class PedidoReporte
+    {
+        public int IdUsuario { get; set; }
+        public string Nombre { get; set; }
+        public int IdMesa { get; set; }
+        public decimal Precio { get; set; }
+        public DateTime FechaHora { get; set; }
+    }
+
+
 }

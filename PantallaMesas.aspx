@@ -35,7 +35,6 @@
                 <td>
                     <a href="PantallaPedido.aspx?IdMesa=<%#Eval("IdMesa") %> "> Agregar Pedido</a>
 <%--                    <asp:Button runat="server" ID="BtnAgregarPedido" CssClass="btn btn-primary" CommandArgument='<%#Eval("IdMesa") %>' CommandName="IdMesa" OnClick="BtnAgregarPedido_Click" Text="Agregar Pedido" />--%>
-                    <asp:Button runat="server" ID="btnEliminarPedido" CssClass="btn btn-warning" CommandArgument='<%#Eval("IdMesa") %>' CommandName="IdMesa" OnClick="btnEliminarPedido_Click" Text="Eliminar Pedido" />
                 </td>
             </tr>
         </ItemTemplate>

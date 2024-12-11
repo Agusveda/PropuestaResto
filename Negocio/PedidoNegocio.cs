@@ -49,11 +49,7 @@ namespace Negocio
         }
 
 
-        //public int IdDetallePedido { get; set; }
-        //public int IdPedido { get; set; }
-        //public int IdInsumo { get; set; }
-        //public int Cantidad { get; set; }
-
+        
 
         public void AgregarPedido(Pedido NuevoPedido)
         {
