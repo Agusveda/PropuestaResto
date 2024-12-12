@@ -43,6 +43,11 @@ namespace PropuestaResto
             PedidoNegocio negocio = new PedidoNegocio();
             List<PedidoFinalizado> listaPedido = negocio.ObtenerPedidoCompletoPorIdPedido(idpedido);
 
+
+            //limpio todos los insumos de detallepedido para asegurar de que no se traigan registros.
+            PedidoNegocio negocioPedido = new PedidoNegocio();
+            negocioPedido.EliminarTodosInsumosDelPedido(idpedido);
+
             // Validar si hay datos
             if (listaPedido == null || listaPedido.Count == 0)
             {
@@ -130,10 +135,6 @@ namespace PropuestaResto
 
 
 
-
-            //limpio todos los insumos de detallepedido para asegurar de que no se traigan registros.
-            PedidoNegocio negocioPedido = new PedidoNegocio();
-            negocioPedido.EliminarTodosInsumosDelPedido(idpedido);
         }
     }
 }
