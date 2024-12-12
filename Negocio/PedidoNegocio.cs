@@ -94,17 +94,23 @@ namespace Negocio
                     // cierro por excepcion
                     datos.cerrarConexion();
 
+                    if (cantidadActual != insumo.Cantidad)
+                    {
+
                     // si el pedido existe se modifica la cantidad, significa que se modifico la cantiadad mas o menos.
                     datos = new AccesoDatos();
                     datos.setearProcedimiento("ActualizarCantidadInsumo");
                     datos.setearParametros("@IdPedido", idpedido);
                     datos.setearParametros("@IdInsumo", insumo.IdInsumo);
-                    datos.setearParametros("@NuevaCantidad", cantidadActual + insumo.Cantidad);
+                    datos.setearParametros("@cantidad", cantidadActual + insumo.Cantidad);
                     datos.ejecutarAccion();
                     return;
+                    }
+                    return;
+
                 }
 
-               // cierro la conexion para que no me traiga excepcion
+                // cierro la conexion para que no me traiga excepcion
                 datos.cerrarConexion();
 
                 // abro de nuevo la conexion
@@ -112,8 +118,8 @@ namespace Negocio
                 datos.setearProcedimiento("insDetallePedido");
                 datos.setearParametros("@IdPedido", idpedido);
                 datos.setearParametros("@IdInsumo", insumo.IdInsumo);
-                datos.setearParametros("@PrecioInsumo", insumo.Precio);
                 datos.setearParametros("@Cantidad", insumo.Cantidad);
+                datos.setearParametros("@PrecioInsumo", insumo.Precio);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
