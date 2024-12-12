@@ -30,12 +30,43 @@
         .gridview-container tr:hover {
             background-color: #e9ecef;
         }
+
+        .btn-Imprimir {
+    background-color: #007bff;
+    color: white; 
+    padding: 10px 20px; 
+    font-size: 16px;
+    font-weight: bold;
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+}
+
+.btn-Imprimir:hover {
+    background-color: #0056b3; 
+    transform: translateY(-2px); 
+}
+
+.btn-Imprimir:active {
+    background-color: #004085; 
+    transform: translateY(0); 
+}
+
+        .button-container {
+            text-align: center; 
+            margin: 20px 0;
+        }
+
     </style>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <asp:Button  runat="server" ID="btnImprimirpdf" OnClick="btnImprimirpdf_Click"/>
+     <div class="button-container">
+        <asp:Button CssClass="btn-Imprimir" Text="Imprimir PDF" runat="server" ID="btnImprimirpdf" OnClick="btnImprimirpdf_Click" />
+    </div>
 
     <div class="gridview-container">
         <asp:GridView 

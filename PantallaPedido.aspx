@@ -26,7 +26,8 @@
             <tr>
                 <td><%# Eval("Descripcion") %></td>
                 <td><%# Eval("IdTipoInsumo") %></td>
-                <td><%# Eval("Cantidad") %></td>
+                <td><%# Convert.ToInt32(Eval("Cantidad")) == 0 ? "Sin stock" : Eval("Cantidad").ToString() %></td>
+
                 <td><%# Eval("Precio")   %></td>
                 <td>
                     <asp:Button runat="server" ID="btnAgregar" CssClass="btn btn-primary" CommandArgument='<%#Eval("IdInsumo") %>' CommandName="IdInsumo" OnClick="btnAgregar_Click" Text="Agregar al pedido" />

@@ -28,10 +28,8 @@
 
                 </td>
                 <td>
-
-                    <h1 class="card-text"><%#Eval("Disponible") %></h1>
-
-                </td>
+    <h1 class="card-text"><%# (bool)Eval("Disponible") ? "Mesa Ocupada " : "Disponible" %></h1>
+</td>
                 <td>
                     <a href="PantallaPedido.aspx?IdMesa=<%#Eval("IdMesa") %> "> Agregar Pedido</a>
 <%--                    <asp:Button runat="server" ID="BtnAgregarPedido" CssClass="btn btn-primary" CommandArgument='<%#Eval("IdMesa") %>' CommandName="IdMesa" OnClick="BtnAgregarPedido_Click" Text="Agregar Pedido" />--%>

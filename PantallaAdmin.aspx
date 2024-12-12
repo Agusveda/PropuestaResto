@@ -46,19 +46,25 @@
 
                         <label for="txtDescripcionInsumo" class="form-label">Descripcion del insumo:</label>
                         <asp:TextBox runat="server" ID="txtDescripcionInsumo" CssClass="form-control"></asp:TextBox>
+                        <asp:RequiredFieldValidator runat="server" ErrorMessage="La descripcion del insumo es requerida" ControlToValidate="txtDescripcionInsumo"> </asp:RequiredFieldValidator>
                     </div>
                     <div class="mb-3">
 
                         <label for="txtCantidadInsumo" class="form-label">Cantidad:</label>
                         <asp:TextBox runat="server" ID="txtCantidadInsumo" CssClass="form-control"></asp:TextBox>
+                        <asp:RequiredFieldValidator runat="server" ErrorMessage="La cantidad del insumo es requerida" ControlToValidate="txtCantidadInsumo"> </asp:RequiredFieldValidator>
+
                     </div>
                     <div class="mb-3">
                         <label for="ddlTipoInsumos" class="form-label">Tipo de insumo:</label>
                         <asp:DropDownList runat="server" ID="ddlTipoInsumos" CssClass="btn btn-outline-dark dropdown-toggle"></asp:DropDownList>
+
                     </div>
                     <div class="mb-3">
                         <label for="txtPrecioInsumo" class="form-label">Precio:</label>
                         <asp:TextBox runat="server" ID="txtPrecioInsumo" CssClass="form-control"></asp:TextBox>
+                        <asp:RequiredFieldValidator runat="server" ErrorMessage="El precio del insumo es requerido" ControlToValidate="txtPrecioInsumo"> </asp:RequiredFieldValidator>
+
                     </div>
                     <div class="mb-3">
                         <asp:Button Text="Agregar" runat="server" ID="btnAceptarAgregarInsumo" CssClass="btn btn-primary" OnClick="btnAceptarAgregarInsumo_Click" />
@@ -128,19 +134,27 @@
 
                         <label for="txtNombreUsuario" class="form-label">Nombre de usuario:</label>
                         <asp:TextBox runat="server" ID="txtNombreUsuario" CssClass="form-control"></asp:TextBox>
+                        <asp:RequiredFieldValidator runat="server" ErrorMessage="El nombre del usuario es requerido" ControlToValidate="txtNombreUsuario"> </asp:RequiredFieldValidator>
+
                     </div>
                     <div class="mb-3">
 
                         <label for="txtPassword" class="form-label">Contraseña:</label>
                         <asp:TextBox runat="server" ID="txtPassword" CssClass="form-control"></asp:TextBox>
+                        <asp:RequiredFieldValidator runat="server" ErrorMessage="La password del usuario es requerida" ControlToValidate="txtPassword"> </asp:RequiredFieldValidator>
+
                     </div>
                     <div class="mb-3">
                         <label for="txtNombre" class="form-label">Nombre:</label>
                         <asp:TextBox runat="server" ID="txtNombre" CssClass="form-control"></asp:TextBox>
+                        <asp:RequiredFieldValidator runat="server" ErrorMessage="El Nombre del mesero es requerido" ControlToValidate="txtNombre"> </asp:RequiredFieldValidator>
+
                     </div>
                     <div class="mb-3">
                         <label for="txtAppelido" class="form-label">Apellido:</label>
                         <asp:TextBox runat="server" ID="txtAppelido" CssClass="form-control"></asp:TextBox>
+                        <asp:RequiredFieldValidator runat="server" ErrorMessage="La Apellido del mesero es requerido" ControlToValidate="txtAppelido"> </asp:RequiredFieldValidator>
+
                     </div>
                     <div class="mb-3">
                         <label for="chkEsadmin" class="form-label">Es admin:</label>

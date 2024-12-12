@@ -34,6 +34,11 @@ namespace PropuestaResto
 
             try
             {
+
+                Page.Validate();
+                if (!Page.IsValid)
+                    return;
+
                 InsumoNegocio negocio = new InsumoNegocio();
                 Insumo nuevo = new Insumo();
 
@@ -137,6 +142,10 @@ namespace PropuestaResto
 
             try
             {
+                Page.Validate();
+                if (!Page.IsValid)
+                    return;
+
                 Insumo modificado = new Insumo();
                 InsumoNegocio negocio = new InsumoNegocio();
 
@@ -253,6 +262,9 @@ namespace PropuestaResto
         {
             try
             {
+                Page.Validate();
+                if (!Page.IsValid)
+                    return;
                 UsuarioNegocio negocio = new UsuarioNegocio();
                 Usuario nuevo = new Usuario();
                 nuevo.IdUsuario = int.Parse(txtIdUsuario.Text);
@@ -327,6 +339,9 @@ namespace PropuestaResto
         {
             try
             {
+                Page.Validate();
+                if (!Page.IsValid)
+                    return;
                 UsuarioNegocio negocio = new UsuarioNegocio();
                 Usuario nuevo = new Usuario();
 
@@ -424,6 +439,9 @@ namespace PropuestaResto
 
         protected void btnReportes_Click(object sender, EventArgs e)
         {
+
+            Response.Redirect("PantallaReportes.aspx", false);
+
 
         }
     }

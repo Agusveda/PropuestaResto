@@ -25,6 +25,9 @@ namespace PropuestaResto
 
             try
             {
+                Page.Validate();
+                if (!Page.IsValid)
+                    return;
 
               usuario.NombreUsuario = txtuser.Text;
                 usuario.Password= txtPassword.Text;
@@ -32,7 +35,7 @@ namespace PropuestaResto
                 {
                     Session.Add("Usuario", usuario);
 
-                    Response.Redirect("Default.aspx");
+                    Response.Redirect("Default.aspx",false);
 
 
                 }
