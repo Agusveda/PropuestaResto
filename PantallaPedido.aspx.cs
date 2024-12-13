@@ -246,6 +246,7 @@ namespace PropuestaResto
 
         protected void btnFinalizarPedido_Click(object sender, EventArgs e)
         {
+
             if (Session["IdPedidoActual"] != null)
             {
                 int idPedido = (int)Session["IdPedidoActual"];
@@ -269,6 +270,11 @@ namespace PropuestaResto
 
                 Response.Redirect("PantallaFinalizarPedido.aspx");
             }
+
+            // esta funcion de java script me funciona para mostrar mensajes emergentes.
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "alerta", "alert('Por favor, confirme el pedido antes de finalizarlo.');", true);
+
+
         }
 
         protected void Filtro_TextChanged(object sender, EventArgs e)

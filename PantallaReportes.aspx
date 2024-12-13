@@ -30,9 +30,23 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container reportes-container">
+  <div class="container reportes-container">
         <h1 class="reportes-header">Reportes</h1>
 
+        <!-- Sección de Reportes Generales -->
+        <div class="reportes-generales">
+            <h2>Reportes Generales</h2>
+            <div class="mb-3">
+                <label class="form-label">Monto Total de Ventas:</label>
+                <asp:Label ID="lblMontoTotal" runat="server" CssClass="text-primary"></asp:Label>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Cantidad Total de Insumos:</label>
+                <asp:Label ID="lblCantidadInsumos" runat="server" CssClass="text-primary"></asp:Label>
+            </div>
+        </div>
+
+              <!-- Botones de Reportes --> 
         <div class="reportes-buttons">
             <asp:Button Text="Pedidos por Mesa" CssClass="btn btn-outline-primary" runat="server" ID="btnPedidosMesa" OnClick="btnPedidosMesa_Click" />
             <asp:Button Text="Pedidos por Mesero" CssClass="btn btn-outline-secondary" runat="server" ID="btnPedidosMesero" OnClick="btnPedidosMesero_Click" />

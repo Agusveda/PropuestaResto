@@ -13,7 +13,12 @@ namespace PropuestaResto
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!(Session["usuario"] != null && ((Dominio.Usuario)Session["usuario"]).EsAdmin == true))
+            {
+                Session.Add("error", "No tenes permisos para ingresar a esta pantalla, debes ser admin");
+                Response.Redirect("Error.aspx", false);
+            }
+            CargarReportesGenerales();
         }
 
         protected void btnPedidosMesa_Click(object sender, EventArgs e)
@@ -68,6 +73,18 @@ namespace PropuestaResto
             repPedidosMesa.DataSource = listaPedidoMesa;
             repPedidosMesa.DataBind();
 
+        }
+        private void CargarReportesGenerales()
+        {
+            ReporteNegocio negocio = new ReporteNegocio();
+
+            // Obtener el monto total de ventas
+            decimal montoTotal = negocio.ObtenerMontoTotal();
+            lblMontoTotal.Text = montoTotal.ToString();
+
+            // Obtener la cantidad total de insumos
+            int cantidadInsumos = negocio.ObtenerCantidadTotalInsumos();
+            lblCantidadInsumos.Text = cantidadInsumos.ToString();
         }
 
         protected void ConfirmarPedidosMesero_Click(object sender, EventArgs e)

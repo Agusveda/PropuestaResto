@@ -21,6 +21,12 @@
         <div class="col">
             <asp:Button Text="ASIGNACION DE MESAS (a los meseros)" class="btn btn-outline-success" runat="server" ID="btnAsignacionMesa" OnClick="btnAsignacionMesa_Click" />
         </div>
+
+        <div class="col">
+
+        <asp:Button runat="server" Text="Agregar nuevo tipo insumo" ID="btnNuevoInsumo" CssClass="btn btn-primary" OnClick="btnNuevoInsumo_Click" />
+        </div>
+
         <div class="col">
             <asp:Button Text="REPORTES" class="btn btn-outline-success" runat="server" ID="btnReportes" OnClick="btnReportes_Click" />
         </div>
@@ -94,8 +100,8 @@
                     <td><%# Eval("Cantidad") %></td>
                     <td><%# Eval("Precio")   %></td>
                     <td>
-                        <asp:Button runat="server" ID="btnModificar" CssClass="btn btn-primary" CommandArgument='<%#Eval("IdInsumo") %>' CommandName="IdInsumo" OnClick="btnModificar_Click" Text="Modificar" />
-                        <asp:Button runat="server" ID="btnEliminar" CssClass="btn btn-warning" OnClick="btnEliminar_Click" CommandArgument='<%#Eval("IdInsumo") %>' CommandName="IdInsumo" Text="Eliminar" />
+                        <asp:Button runat="server" ID="btnModificar" CausesValidation="false"  CssClass="btn btn-primary" CommandArgument='<%#Eval("IdInsumo") %>' CommandName="IdInsumo" OnClick="btnModificar_Click" Text="Modificar" />
+                        <asp:Button runat="server" ID="btnEliminar" CausesValidation="false"  CssClass="btn btn-warning" OnClick="btnEliminar_Click" CommandArgument='<%#Eval("IdInsumo") %>' CommandName="IdInsumo" Text="Eliminar" />
                     </td>
                 </tr>
             </ItemTemplate>
@@ -194,8 +200,8 @@
                     <td><%# Eval("FechaIngreso") %></td>
                     <td><%# Eval("EsAdmin") %></td>
                     <td>
-                        <asp:Button runat="server" ID="btnModificarUsuario" CssClass="btn btn-primary" CommandArgument='<%#Eval("IdUsuario") %>' CommandName="IdInsumo" OnClick="btnModificarUsuario_Click" Text="Modificar" />
-                        <asp:Button runat="server" ID="btnEliminarUsuario" CssClass="btn btn-warning" OnClick="btnEliminarUsuario_Click" CommandArgument='<%#Eval("IdUsuario") %>' CommandName="IdInsumo" Text="Eliminar" />
+                        <asp:Button runat="server" CausesValidation="false"  ID="btnModificarUsuario" CssClass="btn btn-primary" CommandArgument='<%#Eval("IdUsuario") %>' CommandName="IdInsumo" OnClick="btnModificarUsuario_Click" Text="Modificar" />
+                        <asp:Button runat="server" CausesValidation="false"  ID="btnEliminarUsuario" CssClass="btn btn-warning" OnClick="btnEliminarUsuario_Click" CommandArgument='<%#Eval("IdUsuario") %>' CommandName="IdInsumo" Text="Eliminar" />
                     </td>
                 </tr>
             </ItemTemplate>
@@ -228,6 +234,7 @@
             <asp:Button runat="server" ID="btnConfirmarAsignarMesero" OnClick="btnConfirmarAsignarMesero_Click" CssClass="btn btn-primary" Text="Confirmar Asignacion" />
 
         </div>
+
 
         <asp:Repeater ID="repMesasDisponibles" runat="server">
             <HeaderTemplate>
@@ -265,6 +272,23 @@
     </div>
 
 
+    
+        <%--      tipo insumo nuevo--%>
+        <div id="divAltaNuevotipoInsumo" runat="server" visible="false">
+            <div class="mb-3">
+                <label for="ddlTipoInsumoActuales" class="form-label">Tipo de insumo actuales:</label>
+                <asp:DropDownList runat="server" ID="ddlTipoInsumoActuales" CssClass="btn btn-outline-dark dropdown-toggle"></asp:DropDownList>
+            </div>
+            <div class="mb-3">
+                <label for="txtDescripcionNuevoTipoInsumo" class="form-label">Descripcion del insumo:</label>
+                <asp:TextBox runat="server" ID="txtDescripcionNuevoTipoInsumo" CssClass="form-control"></asp:TextBox>
+                <asp:RequiredFieldValidator runat="server" ErrorMessage="La descripcion del nuevo tipo insumo es requerida" ControlToValidate="txtDescripcionNuevoTipoInsumo"> </asp:RequiredFieldValidator>
+            </div>
+            <asp:Button runat="server" Text="Agregar Insumo" ID="Button1" CssClass="btn btn-primary" OnClick="btnConfirmacionNuevoTipoInsumo_Click" />
+            <asp:Button runat="server" CausesValidation="false" Text="Cancelar" ID="btncancelarTipoInsumoNuevo" CssClass="btn btn-primary" OnClick="btncancelarTipoInsumoNuevo_Click" />
+
+        </div>
+        <%--      fin tipo insumo nuevo--%>
 
 
 

@@ -133,6 +133,7 @@ namespace PropuestaResto
             Response.End();
 
 
+            Response.Redirect("Default.aspx");
 
 
         }

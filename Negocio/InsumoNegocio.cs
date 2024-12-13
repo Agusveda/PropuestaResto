@@ -173,13 +173,7 @@ namespace Negocio
 
             }
         }
-
-
-
-
-
-
-    public void BajaLogicaInsumo(int id)
+        public void BajaLogicaInsumo(int id)
     {
         AccesoDatos datos = new AccesoDatos();
 
@@ -202,6 +196,28 @@ namespace Negocio
             datos.cerrarConexion();
         }
     }
+
+        public void AgregarTipoInsumo(TipoInsumo nuevotipoinsumo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearProcedimiento("insTipoInsumo");
+                datos.setearParametros("@Descripcion", nuevotipoinsumo.Descripciontipo);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+
+
+            }
+        }
 
 
     }

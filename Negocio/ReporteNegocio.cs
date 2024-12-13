@@ -72,7 +72,60 @@ namespace Negocio
             return lista;
         }
 
+        
+            public int ObtenerCantidadTotalInsumos()
+        {
 
+            AccesoDatos datos = new AccesoDatos();
+            int montototal = 0;
+            try
+            {
+
+
+                datos.setearProcedimiento("ObtenerCantidadTotalInsumos");
+                datos.ejecutarLectura();
+                while (datos.Lector.Read())
+                {
+                    Insumo aux = new Insumo();
+
+                    montototal = (int)datos.Lector["Total"];
+
+                    
+                }
+                return montototal;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public decimal ObtenerMontoTotal()
+        {
+            AccesoDatos datos = new AccesoDatos();
+            decimal montototal = 0;
+            try
+            {
+
+
+                datos.setearProcedimiento("ObtenerMontoTotal");
+                datos.ejecutarLectura();
+                while (datos.Lector.Read())
+                {
+                    Pedido aux = new Pedido();
+
+                    montototal = (decimal)datos.Lector["Total"];
+
+                   
+                }
+                return montototal;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        
 
 
 

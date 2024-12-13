@@ -136,6 +136,7 @@ namespace PropuestaResto
             btnAceptarModificarInsumo.Visible = false;
 
 
+
         } // muestro el formulario de alta de insumo
         protected void btnAceptarModificarInsumo_Click(object sender, EventArgs e)
         {
@@ -192,6 +193,7 @@ namespace PropuestaResto
             btnAceptarModificarInsumo.Visible = false;
             ABMUSUARIOS.Visible = false;
             divASIGNACIONMESA.Visible = false;
+            divAltaNuevotipoInsumo.Visible = false;
 
 
         } // carga los insumos actuales.
@@ -214,6 +216,7 @@ namespace PropuestaResto
             btnAceptarAgregarUsuario.Visible = true;
             divAltaUsuario.Visible = true;
             ABMINSUMOS.Visible = false;
+            divAltaNuevotipoInsumo.Visible = false;
             
 
 
@@ -329,6 +332,7 @@ namespace PropuestaResto
             UsuarioNegocio negocio = new UsuarioNegocio();
             ABMINSUMOS.Visible = false;
             divASIGNACIONMESA.Visible = false;
+            divAltaNuevotipoInsumo.Visible = false;
 
 
 
@@ -387,7 +391,8 @@ namespace PropuestaResto
             divAltaInsumo.Visible = false;
             btnAceptarModificarInsumo.Visible = false;
             ABMUSUARIOS.Visible = false;
-           
+            divAltaNuevotipoInsumo.Visible = false;
+
 
 
 
@@ -444,5 +449,47 @@ namespace PropuestaResto
 
 
         }
+
+
+        protected void btnNuevoInsumo_Click(object sender, EventArgs e)
+        {
+            divAltaNuevotipoInsumo.Visible = true;
+            InsumoNegocio negocio = new InsumoNegocio();
+
+
+            //desplegable de los tipos de insumo
+            ddlTipoInsumoActuales.DataSource = negocio.ListarTipoInsumo();
+            ddlTipoInsumoActuales.DataValueField = "IdTipoInsumo";
+            ddlTipoInsumoActuales.DataTextField = "DescripcionTipo";
+            ddlTipoInsumoActuales.DataBind();
+            ABMINSUMOS.Visible = false;
+            ABMUSUARIOS.Visible = false;
+            divASIGNACIONMESA.Visible = false;
+
+        }
+
+        protected void btnConfirmacionNuevoTipoInsumo_Click(object sender, EventArgs e)
+        {
+
+            InsumoNegocio negocio = new InsumoNegocio();
+            TipoInsumo nuevo = new TipoInsumo();
+
+
+            nuevo.Descripciontipo = txtDescripcionNuevoTipoInsumo.Text;
+
+            negocio.AgregarTipoInsumo(nuevo);
+
+
+
+
+        }
+
+        protected void btncancelarTipoInsumoNuevo_Click(object sender, EventArgs e)
+        {
+            divAltaNuevotipoInsumo.Visible=false;
+
+        }
+
+        
     }
 }
