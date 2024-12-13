@@ -66,6 +66,8 @@
 
      <div class="button-container">
         <asp:Button CssClass="btn-Imprimir" Text="Imprimir PDF" runat="server" ID="btnImprimirpdf" OnClick="btnImprimirpdf_Click" />
+        <asp:Button CssClass="btn btn-brn-succes" Text="Volver a mesas" runat="server" ID="btnMesas" OnClick="btnMesas_Click" Visible="false" />
+
     </div>
 
     <div class="gridview-container">
@@ -76,4 +78,5 @@
             CssClass="table">
         </asp:GridView>
     </div>
+
 </asp:Content>

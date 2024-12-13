@@ -13,4 +13,15 @@ namespace Dominio
         public bool Asignada { get; set; }
         public int idMeseroAsignado { get; set; }
     }
+    public class MesaUsuario
+    {
+        public int IdMesa { get; set; }
+        public string NombreUsuario { get; set; }
+        public string ApellidoUsuario { get; set; }
+
+        public bool Disponible { get; set; }
+        public bool Asignada { get; set; }
+        public int idMeseroAsignado { get; set; }
+
+    }
 }

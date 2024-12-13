@@ -286,6 +286,11 @@ namespace PropuestaResto
             repInsumos.DataSource = listaFiltrada;
             repInsumos.DataBind();
         }
+
+        protected void btnAtras_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("PantallaMesas.aspx", false);
+        }
     }
 }
 

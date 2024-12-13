@@ -3,11 +3,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
 
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #bfa6a0; 
-            margin: 0;
-            padding: 0;
+            font-family:  Arial, sans-serif;
+            background-color: #bfa6a0;
+            color: #bfa6a0;
         }
 
         .container {
@@ -15,19 +15,30 @@
             height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             text-align: center;
+            padding: 20px;
+            position: relative; 
+        top: 50px;
         }
 
-        h1, h2 {
-            color: #333; 
+        h1 {
+            font-size: 2.5em;
+            color: #000000;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            color: #808080;
         }
 
         .row {
             display: flex;
             justify-content: center;
-            gap: 20px; 
+            gap: 20px;
             flex-wrap: wrap;
+            margin-top: 20px;
         }
 
         .col {
@@ -37,19 +48,19 @@
         }
 
         .btn {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
+            background-color: #a1d9c6;
+            padding: 15px 20px;
+  
+            border-radius: 5px;
             cursor: pointer;
             width: 100%;
             font-size: 16px;
-            margin-top: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s, transform 0.2s;
         }
 
         .btn:hover {
-            background-color: #0056b3;
+            background-color: #5fac4c;
         }
 
 

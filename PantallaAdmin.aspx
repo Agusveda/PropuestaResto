@@ -1,34 +1,40 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="PantallaAdmin.aspx.cs" Inherits="PropuestaResto.PantallaAdmin" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" type="text/css" href="css/PantallaAdminCSS.css" /> <%--ESTILOS--%>
+
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+       <asp:ScriptManager id="ScriptManager" runat="server"></asp:ScriptManager>
+   <asp:UpdatePanel runat="server">
+       <ContentTemplate>
     <div class="container container text-center">
 
         <h1>PANTALLA DEL GERENTE </h1>
 
 
         <div class="col">
-            <asp:Button Text="ABML DE INSUMOS" class="btn btn-outline-success" runat="server" ID="btnAbmInsumos" OnClick="btnAbmInsumos_Click" />
+            <asp:Button Text="ABML DE INSUMOS" CausesValidation="false" class="btn btn-outline-success btn-lg btn-block" runat="server" ID="btnAbmInsumos" OnClick="btnAbmInsumos_Click" />
         </div>
 
 
         <div class="col">
-            <asp:Button Text="ABML DE USUARIOS/MESEROS" class="btn btn-outline-success" runat="server" ID="btnAbmUsuarios" OnClick="btnAbmUsuarios_Click" />
+            <asp:Button Text="ABML DE USUARIOS/MESEROS" CausesValidation="false"  class="btn btn-outline-success btn-lg btn-block" runat="server" ID="btnAbmUsuarios" OnClick="btnAbmUsuarios_Click" />
         </div>
 
         <div class="col">
-            <asp:Button Text="ASIGNACION DE MESAS (a los meseros)" class="btn btn-outline-success" runat="server" ID="btnAsignacionMesa" OnClick="btnAsignacionMesa_Click" />
+            <asp:Button Text="ASIGNACION DE MESAS (a los meseros)" class="btn btn-outline-success btn-lg btn-block" CausesValidation="false"   runat="server" ID="btnAsignacionMesa" OnClick="btnAsignacionMesa_Click" />
         </div>
 
         <div class="col">
 
-        <asp:Button runat="server" Text="Agregar nuevo tipo insumo" ID="btnNuevoInsumo" CssClass="btn btn-primary" OnClick="btnNuevoInsumo_Click" />
+        <asp:Button runat="server" Text="Agregar nuevo tipo insumo" CausesValidation="false"  ID="btnNuevoInsumo" class="btn btn-outline-success btn-lg btn-block" OnClick="btnNuevoInsumo_Click" />
         </div>
 
         <div class="col">
-            <asp:Button Text="REPORTES" class="btn btn-outline-success" runat="server" ID="btnReportes" OnClick="btnReportes_Click" />
+            <asp:Button Text="REPORTES" class="btn btn-outline-success btn-lg btn-block" CausesValidation="false"  runat="server" ID="btnReportes" OnClick="btnReportes_Click" />
         </div>
 
 
@@ -84,6 +90,7 @@
         <asp:Repeater ID="repInsumos" runat="server">
             <HeaderTemplate>
                 <table class="table table-striped">
+                    <thead class="thead-dark">
                     <tr>
                         <th>Descripción</th>
                         <th>Tipo de Insumo</th>
@@ -91,6 +98,7 @@
                         <th>Precio</th>
                         <th>Accion</th>
                     </tr>
+                        </thead>
             </HeaderTemplate>
 
             <ItemTemplate>
@@ -101,7 +109,7 @@
                     <td><%# Eval("Precio")   %></td>
                     <td>
                         <asp:Button runat="server" ID="btnModificar" CausesValidation="false"  CssClass="btn btn-primary" CommandArgument='<%#Eval("IdInsumo") %>' CommandName="IdInsumo" OnClick="btnModificar_Click" Text="Modificar" />
-                        <asp:Button runat="server" ID="btnEliminar" CausesValidation="false"  CssClass="btn btn-warning" OnClick="btnEliminar_Click" CommandArgument='<%#Eval("IdInsumo") %>' CommandName="IdInsumo" Text="Eliminar" />
+                        <asp:Button runat="server" ID="btnEliminar" CausesValidation="false"  CssClass="btn btn-outline-danger" OnClick="btnEliminar_Click" CommandArgument='<%#Eval("IdInsumo") %>' CommandName="IdInsumo" Text="Eliminar" />
                     </td>
                 </tr>
             </ItemTemplate>
@@ -178,6 +186,8 @@
         <asp:Repeater ID="repUsuarios" runat="server">
             <HeaderTemplate>
                 <table class="table table-striped">
+                    <thead class="thead-dark">
+
                     <tr>
                         <th>id</th>
                         <th>Nombre Usuario</th>
@@ -188,6 +198,7 @@
                         <th>EsAdmin</th>
                         <th>Accion</th>
                     </tr>
+                    </thead>
             </HeaderTemplate>
 
             <ItemTemplate>
@@ -201,7 +212,7 @@
                     <td><%# Eval("EsAdmin") %></td>
                     <td>
                         <asp:Button runat="server" CausesValidation="false"  ID="btnModificarUsuario" CssClass="btn btn-primary" CommandArgument='<%#Eval("IdUsuario") %>' CommandName="IdInsumo" OnClick="btnModificarUsuario_Click" Text="Modificar" />
-                        <asp:Button runat="server" CausesValidation="false"  ID="btnEliminarUsuario" CssClass="btn btn-warning" OnClick="btnEliminarUsuario_Click" CommandArgument='<%#Eval("IdUsuario") %>' CommandName="IdInsumo" Text="Eliminar" />
+                        <asp:Button runat="server" CausesValidation="false"  ID="btnEliminarUsuario" CssClass="btn btn-outline-danger" OnClick="btnEliminarUsuario_Click" CommandArgument='<%#Eval("IdUsuario") %>' CommandName="IdInsumo" Text="Eliminar" />
                     </td>
                 </tr>
             </ItemTemplate>
@@ -231,7 +242,7 @@
                 <h4>Meseros disponibles</h4>
                 <asp:DropDownList runat="server" ID="ddlMeseros" CssClass="btn btn-outline-dark ddropdown-toggle"></asp:DropDownList>
             </div>
-            <asp:Button runat="server" ID="btnConfirmarAsignarMesero" OnClick="btnConfirmarAsignarMesero_Click" CssClass="btn btn-primary" Text="Confirmar Asignacion" />
+            <asp:Button runat="server" ID="btnConfirmarAsignarMesero" OnClick="btnConfirmarAsignarMesero_Click" CssClass="btn btn-outline-primary" Text="Confirmar Asignacion" />
 
         </div>
 
@@ -239,20 +250,27 @@
         <asp:Repeater ID="repMesasDisponibles" runat="server">
             <HeaderTemplate>
                 <table class="table table-striped">
+                    <thead class="thead-dark">
+
                     <tr>
                         <th>Número de mesa</th>
                         <th>Mesero Asignado a la mesa</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
                         <th>Acciones</th>
                     </tr>
+                    </thead>
             </HeaderTemplate>
 
             <ItemTemplate>
                 <tr>
                     <td><%# Eval("IdMesa") %></td>
                     <td><%# Eval("IdMeseroAsignado") %></td>
+                    <td><%# Eval("NombreUsuario") %></td>
+                    <td><%# Eval("ApellidoUsuario") %></td>
 
                     <td>
-                        <asp:Button runat="server" ID="btnAsignarMeseroMesa" CssClass="btn btn-primary" CommandArgument='<%#Eval("IdMesa") %>' CommandName="IdMesa" OnClick="btnAsignarMeseroMesa_Click" Text="Asignar" />
+                        <asp:Button runat="server" ID="btnAsignarMeseroMesa" CssClass="btn btn-outline-primary" CommandArgument='<%#Eval("IdMesa") %>' CommandName="IdMesa" OnClick="btnAsignarMeseroMesa_Click" Text="Asignar" />
                     </td>
                 </tr>
             </ItemTemplate>
@@ -284,8 +302,8 @@
                 <asp:TextBox runat="server" ID="txtDescripcionNuevoTipoInsumo" CssClass="form-control"></asp:TextBox>
                 <asp:RequiredFieldValidator runat="server" ErrorMessage="La descripcion del nuevo tipo insumo es requerida" ControlToValidate="txtDescripcionNuevoTipoInsumo"> </asp:RequiredFieldValidator>
             </div>
-            <asp:Button runat="server" Text="Agregar Insumo" ID="Button1" CssClass="btn btn-primary" OnClick="btnConfirmacionNuevoTipoInsumo_Click" />
-            <asp:Button runat="server" CausesValidation="false" Text="Cancelar" ID="btncancelarTipoInsumoNuevo" CssClass="btn btn-primary" OnClick="btncancelarTipoInsumoNuevo_Click" />
+            <asp:Button runat="server" Text="Agregar Insumo" ID="Button1"  class="btn btn-outline-primary" OnClick="btnConfirmacionNuevoTipoInsumo_Click" />
+            <asp:Button runat="server" CausesValidation="false" Text="Cancelar" ID="btncancelarTipoInsumoNuevo" CssClass="btn btn-outline-danger" OnClick="btncancelarTipoInsumoNuevo_Click" />
 
         </div>
         <%--      fin tipo insumo nuevo--%>
@@ -293,4 +311,6 @@
 
 
 
+           </ContentTemplate>
+           </asp:UpdatePanel>
 </asp:Content>

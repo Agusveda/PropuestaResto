@@ -39,10 +39,10 @@ namespace PropuestaResto
                 return;
             }
 
+
             int idpedido = (int)Session["IdPedidoFinal"];
             PedidoNegocio negocio = new PedidoNegocio();
             List<PedidoFinalizado> listaPedido = negocio.ObtenerPedidoCompletoPorIdPedido(idpedido);
-
 
             //limpio todos los insumos de detallepedido para asegurar de que no se traigan registros.
             PedidoNegocio negocioPedido = new PedidoNegocio();
@@ -132,9 +132,15 @@ namespace PropuestaResto
             Response.BinaryWrite(memoryStream.ToArray());
             Response.End();
 
+            btnMesas.Visible = true;
 
-            Response.Redirect("Default.aspx");
 
+
+        }
+
+        protected void btnMesas_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("PantallaMesas.aspx", false);
 
         }
     }

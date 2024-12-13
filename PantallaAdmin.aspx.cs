@@ -402,9 +402,8 @@ namespace PropuestaResto
         {
             divASIGNACIONMESA.Visible = true;
             MesaNegocio mesaNegocio = new MesaNegocio();
-            List<Mesa> mesas = mesaNegocio.listarMesas();
+            List<MesaUsuario> mesas = mesaNegocio.listarMesasMeseros();
 
-            // Guardar meseros disponibles en una sesión para acceso rápido en cada fila
             UsuarioNegocio usuNegocio= new UsuarioNegocio();
             Session["MeserosDisponibles"] = usuNegocio.ListarUsuariosMeseros();
 

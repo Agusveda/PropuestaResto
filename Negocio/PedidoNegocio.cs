@@ -399,7 +399,7 @@ namespace Negocio
 
                     pedidoaux.idPedido = (int)datos.Lector["IdPedido"];
                     pedidoaux.idDetallePedido = (int)datos.Lector["IdDetallePedido"];
-                    pedidoaux.IdInsumo = (int)datos.Lector["IdInsumo"];
+                    //pedidoaux.IdInsumo = (int)datos.Lector["IdInsumo"];
                     pedidoaux.Descripcion = (string)datos.Lector["Descripcion"];
                     pedidoaux.cantidad = (int)datos.Lector["Cantidad"];
                     pedidoaux.precioInsumo = (decimal)datos.Lector["PrecioInsumo"];

@@ -91,6 +91,47 @@ namespace Negocio
             }
 
         }
+
+        public List<MesaUsuario> listarMesasMeseros()
+        {
+            List<MesaUsuario> lista = new List<MesaUsuario>();
+            AccesoDatos datos = new AccesoDatos();
+
+
+
+            try
+            {
+
+                datos.setearProcedimiento("listarMesasMeseros");
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+
+                    MesaUsuario aux = new MesaUsuario();
+
+                    aux.IdMesa = (int)datos.Lector["IdMesa"];
+                    aux.Disponible = (bool)datos.Lector["Disponible"];
+                    aux.Asignada = (bool)datos.Lector["Asignada"];
+                    aux.NombreUsuario = (string)datos.Lector["Nombre"];
+                    aux.ApellidoUsuario = (string)datos.Lector["Apellido"];
+                    aux.idMeseroAsignado = (int)datos.Lector["idMeseroAsignado"];
+
+                    lista.Add(aux);
+
+                }
+
+                return lista;
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
         public void ActualizarMesa(int idmesa, bool disponible)
         {
             AccesoDatos datos = new AccesoDatos();

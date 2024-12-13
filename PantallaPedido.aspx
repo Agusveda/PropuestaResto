@@ -3,7 +3,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-
+    <asp:ScriptManager id="ScriptManager" runat="server"></asp:ScriptManager>
+    <asp:UpdatePanel runat="server">
+        <ContentTemplate>
 
 
     <asp:Label Text="" runat="server" ID="lbIdMesa"></asp:Label>
@@ -76,8 +78,13 @@
 
     <asp:Button ID="btnFinalizarPedido" runat="server" CssClass="btn btn-danger" OnClick="btnFinalizarPedido_Click" Text="Finalizar Pedido" />
 
+    <asp:Button ID="btnAtras" runat="server" CssClass="btn btn-success" OnClick="btnAtras_Click" Text="Atras" />
 
 
+
+
+        </ContentTemplate>
+    </asp:UpdatePanel>
 
 
 </asp:Content>
