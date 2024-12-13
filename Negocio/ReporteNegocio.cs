@@ -159,6 +159,38 @@ namespace Negocio
         }
 
 
+        public List<MeseroPorMesa> ObtenerMeseroPorMesaTotal()
+        {
+            AccesoDatos datos = new AccesoDatos();
+            List<MeseroPorMesa> lista = new List<MeseroPorMesa>();
 
+            try
+            {
+                datos.setearProcedimiento("ObtenerMeseroPorMesaTotal");
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    MeseroPorMesa aux = new MeseroPorMesa
+                    {
+                        Nombre = datos.Lector["Nombre"].ToString(),
+                        Apellido = datos.Lector["Apellido"].ToString(),
+                        IdMesa = (int)datos.Lector["IdMesa"],
+                        Precio = (decimal)datos.Lector["Precio"],
+                        FechaHora = (DateTime)datos.Lector["FechaHora"]
+                    };
+
+                    lista.Add(aux);
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
+
 }
+

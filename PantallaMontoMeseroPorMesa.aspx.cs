@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using Negocio;
+using System;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using Negocio;
 
 namespace PropuestaResto
 {
-    public partial class PantallaMontoPorFechas : System.Web.UI.Page
+    public partial class PantallaMontoMeseroPorMesa : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -16,7 +13,6 @@ namespace PropuestaResto
                 Session.Add("error", "No tenes permisos para ingresar a esta pantalla, debes ser admin");
                 Response.Redirect("Error.aspx", false);
             }
-
             if (!IsPostBack)
             {
                 CargarDatos();
@@ -26,16 +22,17 @@ namespace PropuestaResto
         private void CargarDatos()
         {
             ReporteNegocio negocio = new ReporteNegocio();
-            gvMontoPorFechas.DataSource = negocio.ObtenerMontoTotalPorFecha();
-            gvMontoPorFechas.DataBind();
-        }
+            var lista = negocio.ObtenerMeseroPorMesaTotal();
 
-        protected void btnExportar_Click(object sender, EventArgs e)
+            gvMeseroPorMesa.DataSource = lista;
+            gvMeseroPorMesa.DataBind();
+        }
+        protected void btnExportarExcel_Click(object sender, EventArgs e)
         {
-           // Exportacion a excel..... 
+            // Configuración para exportar a Excel
             Response.Clear();
             Response.Buffer = true;
-            Response.AddHeader("content-disposition", "attachment;filename=MontoPorFechas.xls");
+            Response.AddHeader("content-disposition", "attachment;filename=MontoMeseroPorMesa.xls");
             Response.Charset = "";
             Response.ContentType = "application/vnd.ms-excel";
 
@@ -43,10 +40,11 @@ namespace PropuestaResto
             {
                 HtmlTextWriter hw = new HtmlTextWriter(sw);
 
-                gvMontoPorFechas.AllowPaging = false;
-                CargarDatos(); 
+                gvMeseroPorMesa.AllowPaging = false;
+                CargarDatos();
 
-                gvMontoPorFechas.RenderControl(hw);
+                gvMeseroPorMesa.RenderControl(hw);
+
                 Response.Output.Write(sw.ToString());
                 Response.Flush();
                 Response.End();
@@ -55,7 +53,8 @@ namespace PropuestaResto
 
         public override void VerifyRenderingInServerForm(Control control)
         {
-            
+            // Este método es necesario para que el GridView se pueda exportar correctamente
         }
+
     }
 }

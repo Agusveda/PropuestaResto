@@ -480,6 +480,7 @@
     <Content Include="PantallaAdmin.aspx" />
     <Content Include="PantallaFinalizarPedido.aspx" />
     <Content Include="PantallaMesas.aspx" />
+    <Content Include="PantallaMontoMeseroPorMesa.aspx" />
     <Content Include="PantallaMontoPorFechas.aspx" />
     <Content Include="PantallaPedido.aspx" />
     <Content Include="PantallaReportes.aspx" />
@@ -537,6 +538,13 @@
     </Compile>
     <Compile Include="PantallaMesas.aspx.designer.cs">
       <DependentUpon>PantallaMesas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaMontoMeseroPorMesa.aspx.cs">
+      <DependentUpon>PantallaMontoMeseroPorMesa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PantallaMontoMeseroPorMesa.aspx.designer.cs">
+      <DependentUpon>PantallaMontoMeseroPorMesa.aspx</DependentUpon>
     </Compile>
     <Compile Include="PantallaMontoPorFechas.aspx.cs">
       <DependentUpon>PantallaMontoPorFechas.aspx</DependentUpon>

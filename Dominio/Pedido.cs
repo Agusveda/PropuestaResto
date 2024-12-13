@@ -41,5 +41,14 @@ namespace Dominio
         public DateTime FechaHora { get; set; }
         public decimal MontoTotal { get; set; }
     }
+    public class MeseroPorMesa
+    {
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public int IdMesa { get; set; }
+        public decimal Precio { get; set; }
+        public DateTime FechaHora { get; set; }
+    }
+
 
 }

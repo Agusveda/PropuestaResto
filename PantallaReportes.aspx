@@ -49,6 +49,8 @@
               <!-- Botones de Reportes --> 
 
             <a href="PantallaMontoPorFechas.aspx" runat="server"> REPORTE MONTO POR FECHA </a>
+            <a href="PantallaMontoMeseroPorMesa.aspx" runat="server"> REPORTE MESERO POR MESA </a>
+
         <div class="reportes-buttons">
             <asp:Button Text="Pedidos por Mesa" CssClass="btn btn-outline-primary" runat="server" ID="btnPedidosMesa" OnClick="btnPedidosMesa_Click" />
             <asp:Button Text="Pedidos por Mesero" CssClass="btn btn-outline-secondary" runat="server" ID="btnPedidosMesero" OnClick="btnPedidosMesero_Click" />
