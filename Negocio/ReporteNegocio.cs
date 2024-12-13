@@ -125,7 +125,38 @@ namespace Negocio
             }
         }
 
-        
+        public List<MontoPorFecha> ObtenerMontoTotalPorFecha()
+        {
+            AccesoDatos datos = new AccesoDatos();
+            List<MontoPorFecha> lista = new List<MontoPorFecha>();
+
+            try
+            {
+                datos.setearProcedimiento("ObtenerMontoTotalporFecha");
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    MontoPorFecha aux = new MontoPorFecha
+                    {
+                        FechaHora = (DateTime)datos.Lector["FechaHora"],
+                        MontoTotal = (decimal)datos.Lector["MontoTotal"]
+                    };
+
+                    lista.Add(aux);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener el monto total por fechas", ex);
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+            return lista;
+        }
 
 
 

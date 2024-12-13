@@ -36,6 +36,10 @@ namespace Dominio
         public DateTime FechaHora { get; set; }
         public decimal PrecioTotal { get; set; }
     }
-
+    public class MontoPorFecha
+    {
+        public DateTime FechaHora { get; set; }
+        public decimal MontoTotal { get; set; }
+    }
 
 }
